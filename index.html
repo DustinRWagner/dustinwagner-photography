@@ -32,7 +32,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 
 /* progress + nav */
 .progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--amber);z-index:100}
-nav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:1.6rem;
+.topnav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:1.6rem;
 padding:.85rem clamp(1rem,4vw,3rem);background:linear-gradient(180deg,rgba(13,12,10,.92),rgba(13,12,10,.72) 70%,transparent);
 backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .monogram{font-family:var(--disp);font-style:italic;font-size:1.35rem;letter-spacing:.02em;text-decoration:none;color:var(--paper)}
@@ -201,7 +201,7 @@ footer{border-top:1px solid var(--rule)}
 <div class="progress" id="progress"></div>
 <div class="grain" aria-hidden="true"></div>
 
-<nav aria-label="Primary">
+<nav class="topnav" aria-label="Primary">
   <a class="monogram" href="#top">D.&thinsp;Wagner</a>
   <div class="navlinks">
     <a href="#lastlight">LAST LIGHT</a>
