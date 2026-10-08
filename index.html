@@ -84,6 +84,12 @@ h1 .ln2{display:block;padding-left:clamp(1.2rem,8vw,7rem)}
 
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(.9rem,2vw,1.6rem);align-items:start}
 .grid .ph{grid-column:span var(--span,12)}
+@media(min-width:861px){
+ .grid:not(.tightgrid){align-items:stretch}
+ .grid:not(.tightgrid) .ph{display:flex;flex-direction:column}
+ .grid:not(.tightgrid) .ph-img{flex:1}
+ .grid:not(.tightgrid) .ph-img img{height:100%;object-fit:cover}
+}
 .tightgrid{gap:6px}
 @media(max-width:860px){
  .grid .ph{grid-column:span 12}
@@ -198,12 +204,12 @@ footer{border-top:1px solid var(--rule)}
 <nav aria-label="Primary">
   <a class="monogram" href="#top">D.&thinsp;Wagner</a>
   <div class="navlinks">
-    <a href="#signal">SIGNAL</a>
-    <a href="#lastlight" class="hidesm">LAST LIGHT</a>
+    <a href="#lastlight">LAST LIGHT</a>
     <a href="#closer" class="hidesm">CLOSER</a>
-    <a href="#motion" class="hidemid">MOTION</a>
+    <a href="#motion" class="hidesm">MOTION</a>
     <a href="#structures" class="hidemid">STRUCTURES</a>
     <a href="#faces" class="hidemid">FACES</a>
+    <a href="#signal" class="hidemid">SIGNAL</a>
     <a href="#field" class="hidemid">FIELD</a>
     <a href="#archive" class="hidemid">ARCHIVE</a>
     <a href="#about">ABOUT</a>
@@ -241,225 +247,217 @@ footer{border-top:1px solid var(--rule)}
 </section>
 
 <nav class="series-index" aria-label="Series index">
-  <a class="si" href="#signal"><img src="images/winter-visitor.jpg" alt="" loading="lazy"><span><b>I</b>SIGNAL</span></a>
-  <a class="si" href="#lastlight"><img src="images/night-lantern.jpg" alt="" loading="lazy"><span><b>II</b>LAST LIGHT</span></a>
-  <a class="si" href="#closer"><img src="images/sycamore.jpg" alt="" loading="lazy"><span><b>III</b>CLOSER</span></a>
-  <a class="si" href="#motion"><img src="images/canopy-burst.jpg" alt="" loading="lazy"><span><b>IV</b>MOTION</span></a>
-  <a class="si" href="#structures"><img src="images/colonnade.jpg" alt="" loading="lazy"><span><b>V</b>STRUCTURES</span></a>
-  <a class="si" href="#faces"><img src="images/fence-line.jpg" alt="" loading="lazy"><span><b>VI</b>FACES</span></a>
+  <a class="si" href="#lastlight"><img src="images/night-lantern.jpg" alt="" loading="lazy"><span><b>I</b>LAST LIGHT</span></a>
+  <a class="si" href="#closer"><img src="images/sycamore.jpg" alt="" loading="lazy"><span><b>II</b>CLOSER</span></a>
+  <a class="si" href="#motion"><img src="images/canopy-burst.jpg" alt="" loading="lazy"><span><b>III</b>MOTION</span></a>
+  <a class="si" href="#structures"><img src="images/colonnade.jpg" alt="" loading="lazy"><span><b>IV</b>STRUCTURES</span></a>
+  <a class="si" href="#faces"><img src="images/fence-line.jpg" alt="" loading="lazy"><span><b>V</b>FACES</span></a>
+  <a class="si" href="#signal"><img src="images/winter-visitor.jpg" alt="" loading="lazy"><span><b>VI</b>SIGNAL</span></a>
   <a class="si" href="#field"><img src="images/first-of-fall.jpg" alt="" loading="lazy"><span><b>VII</b>FIELD</span></a>
   <a class="si" href="#archive"><img src="images/pavement-study.jpg" alt="" loading="lazy"><span><b>VIII</b>ARCHIVE</span></a>
 </nav>
 
-<section class="chapter" id="signal">
+<section class="chapter" id="lastlight">
 <header class="ch-head">
   <div class="ch-num" aria-hidden="true">I</div>
-  <div>
-    <h2 class="ch-title">Signal</h2>
-    <p class="ch-desc">The frames that define the portfolio.</p>
-  </div>
-  <div class="ch-count">6&thinsp;frames</div>
-</header>
-<div class="grid"><figure class="ph" data-slug="winter-visitor" data-title="Winter Visitor" data-fr="01" style="--span:7">
-<div class="ph-img"><img src="images/winter-visitor.jpg" alt="Winter Visitor" width="1600" height="1383" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;01</span><span class="rl-title">WINTER VISITOR</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="periwinkle" data-title="Periwinkle" data-fr="02" style="--span:5">
-<div class="ph-img"><img src="images/periwinkle.jpg" alt="Periwinkle" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;02</span><span class="rl-title">PERIWINKLE</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="after-the-rain" data-title="After the Rain" data-fr="03" style="--span:12">
-<div class="ph-img"><img src="images/after-the-rain.jpg" alt="After the Rain" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;03</span><span class="rl-title">AFTER THE RAIN</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="crane-fly" data-title="Crane Fly" data-fr="04" style="--span:5">
-<div class="ph-img"><img src="images/crane-fly.jpg" alt="Crane Fly" width="1600" height="1118" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;04</span><span class="rl-title">CRANE FLY</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="sixty-six" data-title="’66" data-fr="05" style="--span:7">
-<div class="ph-img"><img src="images/sixty-six.jpg" alt="’66" width="1600" height="1041" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;05</span><span class="rl-title">’66</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="garden-velocity" data-title="Garden Velocity" data-fr="06" style="--span:12">
-<div class="ph-img"><img src="images/garden-velocity.jpg" alt="Garden Velocity" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;06</span><span class="rl-title">GARDEN VELOCITY</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure></div>
-</section><section class="chapter" id="lastlight">
-<header class="ch-head">
-  <div class="ch-num" aria-hidden="true">II</div>
   <div>
     <h2 class="ch-title">Last Light</h2>
     <p class="ch-desc">Dusk into dark. Low light, long exposures, and whatever the sun leaves behind.</p>
   </div>
   <div class="ch-count">7&thinsp;frames</div>
 </header>
-<div class="grid"><figure class="ph" data-slug="falling-water" data-title="Falling Water" data-fr="07" style="--span:12">
+<div class="grid"><figure class="ph" data-slug="falling-water" data-title="Falling Water" data-fr="01" style="--span:12">
 <div class="ph-img"><img src="images/falling-water.jpg" alt="Falling Water" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;07</span><span class="rl-title">FALLING WATER</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;01</span><span class="rl-title">FALLING WATER</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="transmission" data-title="Transmission" data-fr="08" style="--span:4">
+<figure class="ph" data-slug="transmission" data-title="Transmission" data-fr="02" style="--span:4">
 <div class="ph-img"><img src="images/transmission.jpg" alt="Transmission" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;08</span><span class="rl-title">TRANSMISSION</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;02</span><span class="rl-title">TRANSMISSION</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="golden-hour" data-title="Golden Hour" data-fr="09" style="--span:4">
-<div class="ph-img"><img src="images/golden-hour.jpg" alt="Golden Hour" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;09</span><span class="rl-title">GOLDEN HOUR</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="under-crossing" data-title="Under the Crossing" data-fr="10" style="--span:4">
-<div class="ph-img"><img src="images/under-crossing.jpg" alt="Under the Crossing" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;10</span><span class="rl-title">UNDER THE CROSSING</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="night-lantern" data-title="Night Lantern" data-fr="11" style="--span:4">
-<div class="ph-img"><img src="images/night-lantern.jpg" alt="Night Lantern" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;11</span><span class="rl-title">NIGHT LANTERN</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="the-clearing" data-title="The Clearing" data-fr="12" style="--span:4">
-<div class="ph-img"><img src="images/the-clearing.jpg" alt="The Clearing" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;12</span><span class="rl-title">THE CLEARING</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="blue-dust" data-title="Blue Dust" data-fr="13" style="--span:4">
+<figure class="ph" data-slug="blue-dust" data-title="Blue Dust" data-fr="03" style="--span:4">
 <div class="ph-img"><img src="images/blue-dust.jpg" alt="Blue Dust" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;13</span><span class="rl-title">BLUE DUST</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;03</span><span class="rl-title">BLUE DUST</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="yellow-pull" data-title="Yellow Pull" data-fr="04" style="--span:4">
+<div class="ph-img"><img src="images/yellow-pull.jpg" alt="Yellow Pull" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;04</span><span class="rl-title">YELLOW PULL</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="under-crossing" data-title="Under the Crossing" data-fr="05" style="--span:4">
+<div class="ph-img"><img src="images/under-crossing.jpg" alt="Under the Crossing" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;05</span><span class="rl-title">UNDER THE CROSSING</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="night-lantern" data-title="Night Lantern" data-fr="06" style="--span:4">
+<div class="ph-img"><img src="images/night-lantern.jpg" alt="Night Lantern" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;06</span><span class="rl-title">NIGHT LANTERN</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="the-clearing" data-title="The Clearing" data-fr="07" style="--span:4">
+<div class="ph-img"><img src="images/the-clearing.jpg" alt="The Clearing" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;07</span><span class="rl-title">THE CLEARING</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section><section class="chapter" id="closer">
 <header class="ch-head">
-  <div class="ch-num" aria-hidden="true">III</div>
+  <div class="ch-num" aria-hidden="true">II</div>
   <div>
     <h2 class="ch-title">Closer</h2>
     <p class="ch-desc">Macro studies. Texture at a distance most people never look from.</p>
   </div>
   <div class="ch-count">8&thinsp;frames</div>
 </header>
-<div class="grid tightgrid"><figure class="ph" data-slug="sycamore" data-title="Sycamore" data-fr="14" style="--span:3">
+<div class="grid tightgrid"><figure class="ph" data-slug="sycamore" data-title="Sycamore" data-fr="08" style="--span:3">
 <div class="ph-img tight"><img src="images/sycamore.jpg" alt="Sycamore" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;14</span><span class="rl-title">SYCAMORE</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;08</span><span class="rl-title">SYCAMORE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="dragonfruit" data-title="Dragonfruit" data-fr="15" style="--span:3">
-<div class="ph-img tight"><img src="images/dragonfruit.jpg" alt="Dragonfruit" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;15</span><span class="rl-title">DRAGONFRUIT</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="condensation" data-title="Condensation" data-fr="16" style="--span:3">
-<div class="ph-img tight"><img src="images/condensation.jpg" alt="Condensation" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;16</span><span class="rl-title">CONDENSATION</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="gold-leaf" data-title="Gold Leaf" data-fr="17" style="--span:3">
-<div class="ph-img tight"><img src="images/gold-leaf.jpg" alt="Gold Leaf" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;17</span><span class="rl-title">GOLD LEAF</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="gills" data-title="Gills" data-fr="18" style="--span:3">
-<div class="ph-img tight"><img src="images/gills.jpg" alt="Gills" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;18</span><span class="rl-title">GILLS</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="turning-leaf" data-title="Turning Leaf" data-fr="19" style="--span:3">
+<figure class="ph" data-slug="turning-leaf" data-title="Turning Leaf" data-fr="09" style="--span:3">
 <div class="ph-img tight"><img src="images/turning-leaf.jpg" alt="Turning Leaf" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;19</span><span class="rl-title">TURNING LEAF</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;09</span><span class="rl-title">TURNING LEAF</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="winter-holly" data-title="Winter Holly" data-fr="20" style="--span:3">
+<figure class="ph" data-slug="dragonfruit" data-title="Dragonfruit" data-fr="10" style="--span:3">
+<div class="ph-img tight"><img src="images/dragonfruit.jpg" alt="Dragonfruit" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;10</span><span class="rl-title">DRAGONFRUIT</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="winter-holly" data-title="Winter Holly" data-fr="11" style="--span:3">
 <div class="ph-img tight"><img src="images/winter-holly.jpg" alt="Winter Holly" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;20</span><span class="rl-title">WINTER HOLLY</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;11</span><span class="rl-title">WINTER HOLLY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="frostbitten" data-title="Frostbitten" data-fr="21" style="--span:3">
-<div class="ph-img tight"><img src="images/frostbitten.jpg" alt="Frostbitten" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;21</span><span class="rl-title">FROSTBITTEN</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figure class="ph" data-slug="periwinkle" data-title="Periwinkle" data-fr="12" style="--span:3">
+<div class="ph-img tight"><img src="images/periwinkle.jpg" alt="Periwinkle" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;12</span><span class="rl-title">PERIWINKLE</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="condensation" data-title="Condensation" data-fr="13" style="--span:3">
+<div class="ph-img tight"><img src="images/condensation.jpg" alt="Condensation" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;13</span><span class="rl-title">CONDENSATION</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="gills" data-title="Gills" data-fr="14" style="--span:3">
+<div class="ph-img tight"><img src="images/gills.jpg" alt="Gills" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;14</span><span class="rl-title">GILLS</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="crane-fly" data-title="Crane Fly" data-fr="15" style="--span:3">
+<div class="ph-img tight"><img src="images/crane-fly.jpg" alt="Crane Fly" width="1600" height="1118" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;15</span><span class="rl-title">CRANE FLY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section><section class="chapter" id="motion">
 <header class="ch-head">
-  <div class="ch-num" aria-hidden="true">IV</div>
+  <div class="ch-num" aria-hidden="true">III</div>
   <div>
     <h2 class="ch-title">Motion Studies</h2>
     <p class="ch-desc">Intentional camera movement, zoom pulls, and split-second timing.</p>
   </div>
-  <div class="ch-count">5&thinsp;frames</div>
+  <div class="ch-count">6&thinsp;frames</div>
 </header>
-<div class="masonry masonry-2"><figure class="ph" data-slug="canopy-burst" data-title="Canopy Burst" data-fr="22">
+<div class="masonry masonry-2"><figure class="ph" data-slug="canopy-burst" data-title="Canopy Burst" data-fr="16">
 <div class="ph-img"><img src="images/canopy-burst.jpg" alt="Canopy Burst" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;22</span><span class="rl-title">CANOPY BURST</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;16</span><span class="rl-title">CANOPY BURST</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="light-curtain" data-title="Light Curtain" data-fr="23">
+<figure class="ph" data-slug="garden-velocity" data-title="Garden Velocity" data-fr="17">
+<div class="ph-img"><img src="images/garden-velocity.jpg" alt="Garden Velocity" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;17</span><span class="rl-title">GARDEN VELOCITY</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="light-curtain" data-title="Light Curtain" data-fr="18">
 <div class="ph-img"><img src="images/light-curtain.jpg" alt="Light Curtain" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;23</span><span class="rl-title">LIGHT CURTAIN</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;18</span><span class="rl-title">LIGHT CURTAIN</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="spin-cycle" data-title="Spin Cycle" data-fr="24">
+<figure class="ph" data-slug="spin-cycle" data-title="Spin Cycle" data-fr="19">
 <div class="ph-img"><img src="images/spin-cycle.jpg" alt="Spin Cycle" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;24</span><span class="rl-title">SPIN CYCLE</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;19</span><span class="rl-title">SPIN CYCLE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="crown" data-title="Crown" data-fr="25">
+<figure class="ph" data-slug="crown" data-title="Crown" data-fr="20">
 <div class="ph-img"><img src="images/crown.jpg" alt="Crown" width="1600" height="1048" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;25</span><span class="rl-title">CROWN</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;20</span><span class="rl-title">CROWN</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="percussion" data-title="Percussion" data-fr="26">
+<figure class="ph" data-slug="percussion" data-title="Percussion" data-fr="21">
 <div class="ph-img"><img src="images/percussion.jpg" alt="Percussion" width="1600" height="1517" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;26</span><span class="rl-title">PERCUSSION</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;21</span><span class="rl-title">PERCUSSION</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section><section class="chapter" id="structures">
 <header class="ch-head">
-  <div class="ch-num" aria-hidden="true">V</div>
+  <div class="ch-num" aria-hidden="true">IV</div>
   <div>
     <h2 class="ch-title">Structures</h2>
     <p class="ch-desc">Geometry, shadow, and concrete, mostly in black and white.</p>
   </div>
-  <div class="ch-count">8&thinsp;frames</div>
+  <div class="ch-count">7&thinsp;frames</div>
 </header>
-<div class="masonry"><figure class="ph" data-slug="colonnade" data-title="Colonnade" data-fr="27">
+<div class="masonry"><figure class="ph" data-slug="colonnade" data-title="Colonnade" data-fr="22">
 <div class="ph-img"><img src="images/colonnade.jpg" alt="Colonnade" width="1067" height="1600" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;27</span><span class="rl-title">COLONNADE</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;22</span><span class="rl-title">COLONNADE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="cross-brace" data-title="Cross-Brace" data-fr="28">
-<div class="ph-img"><img src="images/cross-brace.jpg" alt="Cross-Brace" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;28</span><span class="rl-title">CROSS-BRACE</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="doorway" data-title="Doorway" data-fr="29">
-<div class="ph-img"><img src="images/doorway.jpg" alt="Doorway" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;29</span><span class="rl-title">DOORWAY</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="blinds" data-title="Blinds" data-fr="30">
-<div class="ph-img"><img src="images/blinds.jpg" alt="Blinds" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;30</span><span class="rl-title">BLINDS</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="through-canopy" data-title="Morning Through the Canopy" data-fr="31">
+<figure class="ph" data-slug="through-canopy" data-title="Morning Through the Canopy" data-fr="23">
 <div class="ph-img"><img src="images/through-canopy.jpg" alt="Morning Through the Canopy" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;31</span><span class="rl-title">MORNING THROUGH THE CANOPY</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;23</span><span class="rl-title">MORNING THROUGH THE CANOPY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="elevator" data-title="Elevator" data-fr="32">
+<figure class="ph" data-slug="doorway" data-title="Doorway" data-fr="24">
+<div class="ph-img"><img src="images/doorway.jpg" alt="Doorway" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;24</span><span class="rl-title">DOORWAY</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="blinds" data-title="Blinds" data-fr="25">
+<div class="ph-img"><img src="images/blinds.jpg" alt="Blinds" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;25</span><span class="rl-title">BLINDS</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="elevator" data-title="Elevator" data-fr="26">
 <div class="ph-img"><img src="images/elevator.jpg" alt="Elevator" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;32</span><span class="rl-title">ELEVATOR</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;26</span><span class="rl-title">ELEVATOR</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="apex" data-title="Apex" data-fr="33">
+<figure class="ph" data-slug="apex" data-title="Apex" data-fr="27">
 <div class="ph-img"><img src="images/apex.jpg" alt="Apex" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;33</span><span class="rl-title">APEX</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;27</span><span class="rl-title">APEX</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="corner-study" data-title="Corner Study" data-fr="34">
+<figure class="ph" data-slug="corner-study" data-title="Corner Study" data-fr="28">
 <div class="ph-img"><img src="images/corner-study.jpg" alt="Corner Study" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;34</span><span class="rl-title">CORNER STUDY</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;28</span><span class="rl-title">CORNER STUDY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section><section class="chapter" id="faces">
 <header class="ch-head">
-  <div class="ch-num" aria-hidden="true">VI</div>
+  <div class="ch-num" aria-hidden="true">V</div>
   <div>
     <h2 class="ch-title">Faces & Figures</h2>
     <p class="ch-desc">People, candid and posed.</p>
   </div>
-  <div class="ch-count">5&thinsp;frames</div>
+  <div class="ch-count">3&thinsp;frames</div>
 </header>
-<div class="grid"><figure class="ph" data-slug="low-key" data-title="Study in Low Key" data-fr="35" style="--span:7">
-<div class="ph-img"><img src="images/low-key.jpg" alt="Study in Low Key" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;35</span><span class="rl-title">STUDY IN LOW KEY</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="fence-line" data-title="Fence Line" data-fr="36" style="--span:5">
+<div class="grid"><figure class="ph" data-slug="fence-line" data-title="Fence Line" data-fr="29" style="--span:6">
 <div class="ph-img"><img src="images/fence-line.jpg" alt="Fence Line" width="1600" height="1143" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;36</span><span class="rl-title">FENCE LINE</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;29</span><span class="rl-title">FENCE LINE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="the-stairwell" data-title="The Stairwell" data-fr="37" style="--span:4">
+<figure class="ph" data-slug="the-stairwell" data-title="The Stairwell" data-fr="30" style="--span:6">
 <div class="ph-img"><img src="images/the-stairwell.jpg" alt="The Stairwell" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;37</span><span class="rl-title">THE STAIRWELL</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;30</span><span class="rl-title">THE STAIRWELL</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="descent" data-title="Descent" data-fr="38" style="--span:4">
+<figure class="ph" data-slug="descent" data-title="Descent" data-fr="31" style="--span:12">
 <div class="ph-img"><img src="images/descent.jpg" alt="Descent" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;38</span><span class="rl-title">DESCENT</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;31</span><span class="rl-title">DESCENT</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure></div>
+</section><section class="chapter" id="signal">
+<header class="ch-head">
+  <div class="ch-num" aria-hidden="true">VI</div>
+  <div>
+    <h2 class="ch-title">Signal</h2>
+    <p class="ch-desc">The frames that define the portfolio.</p>
+  </div>
+  <div class="ch-count">6&thinsp;frames</div>
+</header>
+<div class="grid"><figure class="ph" data-slug="cross-brace" data-title="Cross-Brace" data-fr="32" style="--span:12">
+<div class="ph-img"><img src="images/cross-brace.jpg" alt="Cross-Brace" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;32</span><span class="rl-title">CROSS-BRACE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="ropes" data-title="Ropes" data-fr="39" style="--span:4">
-<div class="ph-img"><img src="images/ropes.jpg" alt="Ropes" width="1600" height="1570" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;39</span><span class="rl-title">ROPES</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figure class="ph" data-slug="sixty-six" data-title="’66" data-fr="33" style="--span:6">
+<div class="ph-img"><img src="images/sixty-six.jpg" alt="’66" width="1600" height="1041" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;33</span><span class="rl-title">’66</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="low-key" data-title="Study in Low Key" data-fr="34" style="--span:6">
+<div class="ph-img"><img src="images/low-key.jpg" alt="Study in Low Key" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;34</span><span class="rl-title">STUDY IN LOW KEY</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="after-the-rain" data-title="After the Rain" data-fr="35" style="--span:12">
+<div class="ph-img"><img src="images/after-the-rain.jpg" alt="After the Rain" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;35</span><span class="rl-title">AFTER THE RAIN</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="winter-visitor" data-title="Winter Visitor" data-fr="36" style="--span:5">
+<div class="ph-img"><img src="images/winter-visitor.jpg" alt="Winter Visitor" width="1600" height="1383" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;36</span><span class="rl-title">WINTER VISITOR</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="gold-leaf" data-title="Gold Leaf" data-fr="37" style="--span:7">
+<div class="ph-img"><img src="images/gold-leaf.jpg" alt="Gold Leaf" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;37</span><span class="rl-title">GOLD LEAF</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section><section class="chapter" id="field">
 <header class="ch-head">
@@ -468,23 +466,31 @@ footer{border-top:1px solid var(--rule)}
     <h2 class="ch-title">Field Notes</h2>
     <p class="ch-desc">Found scenes. Seasons turning over in Northern California.</p>
   </div>
-  <div class="ch-count">6&thinsp;frames</div>
+  <div class="ch-count">8&thinsp;frames</div>
 </header>
-<div class="masonry"><figure class="ph" data-slug="cloud-cover" data-title="Cloud Cover" data-fr="40">
+<div class="masonry"><figure class="ph" data-slug="cloud-cover" data-title="Cloud Cover" data-fr="38">
 <div class="ph-img"><img src="images/cloud-cover.jpg" alt="Cloud Cover" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;40</span><span class="rl-title">CLOUD COVER</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;38</span><span class="rl-title">CLOUD COVER</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="winter-oak" data-title="Winter Oak" data-fr="41">
+<figure class="ph" data-slug="winter-oak" data-title="Winter Oak" data-fr="39">
 <div class="ph-img"><img src="images/winter-oak.jpg" alt="Winter Oak" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;41</span><span class="rl-title">WINTER OAK</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;39</span><span class="rl-title">WINTER OAK</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="moss-and-bark" data-title="Moss &amp; Bark" data-fr="42">
+<figure class="ph" data-slug="canopy-and-sky" data-title="Canopy &amp; Sky" data-fr="40">
+<div class="ph-img"><img src="images/canopy-and-sky.jpg" alt="Canopy &amp; Sky" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;40</span><span class="rl-title">CANOPY &AMP; SKY</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="moss-and-bark" data-title="Moss &amp; Bark" data-fr="41">
 <div class="ph-img"><img src="images/moss-and-bark.jpg" alt="Moss &amp; Bark" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;42</span><span class="rl-title">MOSS &AMP; BARK</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;41</span><span class="rl-title">MOSS &AMP; BARK</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="first-of-fall" data-title="First of Fall" data-fr="43">
+<figure class="ph" data-slug="first-of-fall" data-title="First of Fall" data-fr="42">
 <div class="ph-img"><img src="images/first-of-fall.jpg" alt="First of Fall" width="1600" height="1067" loading="lazy" decoding="async"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;43</span><span class="rl-title">FIRST OF FALL</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;42</span><span class="rl-title">FIRST OF FALL</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="through-rail" data-title="Through the Rail" data-fr="43">
+<div class="ph-img"><img src="images/through-rail.jpg" alt="Through the Rail" width="1400" height="791" loading="lazy" decoding="async"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;43</span><span class="rl-title">THROUGH THE RAIL</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
 <figure class="ph" data-slug="rosemary-path" data-title="Rosemary Path" data-fr="44">
 <div class="ph-img"><img src="images/rosemary-path.jpg" alt="Rosemary Path" width="1067" height="1600" loading="lazy" decoding="async"></div>
@@ -503,101 +509,101 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">24&thinsp;frames</div>
 </header>
-<div class="grid tightgrid"><figure class="ph" data-slug="resident" data-title="Resident" data-fr="46" style="--span:3">
-<div class="ph-img tight"><img src="images/resident.jpg" alt="Resident" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;46</span><span class="rl-title">RESIDENT</span><span class="perf" aria-hidden="true"></span></figcaption>
+<div class="grid tightgrid"><figure class="ph" data-slug="pavement-study" data-title="Pavement Study" data-fr="46" style="--span:3">
+<div class="ph-img tight"><img src="images/pavement-study.jpg" alt="Pavement Study" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;46</span><span class="rl-title">PAVEMENT STUDY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="acorn" data-title="Acorn" data-fr="47" style="--span:3">
-<div class="ph-img tight"><img src="images/acorn.jpg" alt="Acorn" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;47</span><span class="rl-title">ACORN</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figure class="ph" data-slug="tread" data-title="Tread" data-fr="47" style="--span:3">
+<div class="ph-img tight"><img src="images/tread.jpg" alt="Tread" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;47</span><span class="rl-title">TREAD</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="meltwater" data-title="Meltwater" data-fr="48" style="--span:3">
-<div class="ph-img tight"><img src="images/meltwater.jpg" alt="Meltwater" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;48</span><span class="rl-title">MELTWATER</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figure class="ph" data-slug="new-balance" data-title="New Balance" data-fr="48" style="--span:3">
+<div class="ph-img tight"><img src="images/new-balance.jpg" alt="New Balance" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;48</span><span class="rl-title">NEW BALANCE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
 <figure class="ph" data-slug="eye-bolt" data-title="Eye Bolt" data-fr="49" style="--span:3">
 <div class="ph-img tight"><img src="images/eye-bolt.jpg" alt="Eye Bolt" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;49</span><span class="rl-title">EYE BOLT</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="tread" data-title="Tread" data-fr="50" style="--span:3">
-<div class="ph-img tight"><img src="images/tread.jpg" alt="Tread" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;50</span><span class="rl-title">TREAD</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figure class="ph" data-slug="acorn" data-title="Acorn" data-fr="50" style="--span:3">
+<div class="ph-img tight"><img src="images/acorn.jpg" alt="Acorn" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;50</span><span class="rl-title">ACORN</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="pavement-study" data-title="Pavement Study" data-fr="51" style="--span:3">
-<div class="ph-img tight"><img src="images/pavement-study.jpg" alt="Pavement Study" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;51</span><span class="rl-title">PAVEMENT STUDY</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figure class="ph" data-slug="meltwater" data-title="Meltwater" data-fr="51" style="--span:3">
+<div class="ph-img tight"><img src="images/meltwater.jpg" alt="Meltwater" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;51</span><span class="rl-title">MELTWATER</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="corrugation" data-title="Corrugation" data-fr="52" style="--span:3">
-<div class="ph-img tight"><img src="images/corrugation.jpg" alt="Corrugation" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;52</span><span class="rl-title">CORRUGATION</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="charred" data-title="Charred" data-fr="53" style="--span:3">
-<div class="ph-img tight"><img src="images/charred.jpg" alt="Charred" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;53</span><span class="rl-title">CHARRED</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="citrus" data-title="Citrus" data-fr="54" style="--span:3">
-<div class="ph-img tight"><img src="images/citrus.jpg" alt="Citrus" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;54</span><span class="rl-title">CITRUS</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="contact" data-title="Contact" data-fr="55" style="--span:3">
-<div class="ph-img tight"><img src="images/contact.jpg" alt="Contact" width="1600" height="1322" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;55</span><span class="rl-title">CONTACT</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="quartz" data-title="Quartz" data-fr="56" style="--span:3">
-<div class="ph-img tight"><img src="images/quartz.jpg" alt="Quartz" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;56</span><span class="rl-title">QUARTZ</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="blue-shred" data-title="Blue Shred" data-fr="57" style="--span:3">
-<div class="ph-img tight"><img src="images/blue-shred.jpg" alt="Blue Shred" width="1120" height="1400" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;57</span><span class="rl-title">BLUE SHRED</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="mesh" data-title="Mesh" data-fr="58" style="--span:3">
+<figure class="ph" data-slug="mesh" data-title="Mesh" data-fr="52" style="--span:3">
 <div class="ph-img tight"><img src="images/mesh.jpg" alt="Mesh" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;58</span><span class="rl-title">MESH</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;52</span><span class="rl-title">MESH</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="wash-day" data-title="Wash Day" data-fr="59" style="--span:3">
+<figure class="ph" data-slug="quartz" data-title="Quartz" data-fr="53" style="--span:3">
+<div class="ph-img tight"><img src="images/quartz.jpg" alt="Quartz" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;53</span><span class="rl-title">QUARTZ</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="contact" data-title="Contact" data-fr="54" style="--span:3">
+<div class="ph-img tight"><img src="images/contact.jpg" alt="Contact" width="1600" height="1322" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;54</span><span class="rl-title">CONTACT</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="storm-drain" data-title="Storm Drain (composite)" data-fr="55" style="--span:3">
+<div class="ph-img tight"><img src="images/storm-drain.jpg" alt="Storm Drain (composite)" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;55</span><span class="rl-title">STORM DRAIN (COMPOSITE)</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="charred" data-title="Charred" data-fr="56" style="--span:3">
+<div class="ph-img tight"><img src="images/charred.jpg" alt="Charred" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;56</span><span class="rl-title">CHARRED</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="corrugation" data-title="Corrugation" data-fr="57" style="--span:3">
+<div class="ph-img tight"><img src="images/corrugation.jpg" alt="Corrugation" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;57</span><span class="rl-title">CORRUGATION</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="last-light-folsom" data-title="Last Light, Folsom Lake" data-fr="58" style="--span:3">
+<div class="ph-img tight"><img src="images/last-light-folsom.jpg" alt="Last Light, Folsom Lake" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;58</span><span class="rl-title">LAST LIGHT, FOLSOM LAKE</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="golden-hour" data-title="Golden Hour" data-fr="59" style="--span:3">
+<div class="ph-img tight"><img src="images/golden-hour.jpg" alt="Golden Hour" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;59</span><span class="rl-title">GOLDEN HOUR</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="wash-day" data-title="Wash Day" data-fr="60" style="--span:3">
 <div class="ph-img tight"><img src="images/wash-day.jpg" alt="Wash Day" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;59</span><span class="rl-title">WASH DAY</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;60</span><span class="rl-title">WASH DAY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="overlook" data-title="Overlook" data-fr="60" style="--span:3">
+<figure class="ph" data-slug="overlook" data-title="Overlook" data-fr="61" style="--span:3">
 <div class="ph-img tight"><img src="images/overlook.jpg" alt="Overlook" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;60</span><span class="rl-title">OVERLOOK</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;61</span><span class="rl-title">OVERLOOK</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="new-balance" data-title="New Balance" data-fr="61" style="--span:3">
-<div class="ph-img tight"><img src="images/new-balance.jpg" alt="New Balance" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;61</span><span class="rl-title">NEW BALANCE</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figure class="ph" data-slug="ropes" data-title="Ropes" data-fr="62" style="--span:3">
+<div class="ph-img tight"><img src="images/ropes.jpg" alt="Ropes" width="1600" height="1570" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;62</span><span class="rl-title">ROPES</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="through-rail" data-title="Through the Rail" data-fr="62" style="--span:3">
-<div class="ph-img tight"><img src="images/through-rail.jpg" alt="Through the Rail" width="1400" height="791" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;62</span><span class="rl-title">THROUGH THE RAIL</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="autumn-frame" data-title="Autumn Frame" data-fr="63" style="--span:3">
-<div class="ph-img tight"><img src="images/autumn-frame.jpg" alt="Autumn Frame" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;63</span><span class="rl-title">AUTUMN FRAME</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figure class="ph" data-slug="blue-shred" data-title="Blue Shred" data-fr="63" style="--span:3">
+<div class="ph-img tight"><img src="images/blue-shred.jpg" alt="Blue Shred" width="1120" height="1400" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;63</span><span class="rl-title">BLUE SHRED</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
 <figure class="ph" data-slug="the-fox" data-title="The Fox" data-fr="64" style="--span:3">
 <div class="ph-img tight"><img src="images/the-fox.jpg" alt="The Fox" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;64</span><span class="rl-title">THE FOX</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="painted-rocks" data-title="Painted Rocks" data-fr="65" style="--span:3">
+<figure class="ph" data-slug="autumn-frame" data-title="Autumn Frame" data-fr="65" style="--span:3">
+<div class="ph-img tight"><img src="images/autumn-frame.jpg" alt="Autumn Frame" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;65</span><span class="rl-title">AUTUMN FRAME</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="citrus" data-title="Citrus" data-fr="66" style="--span:3">
+<div class="ph-img tight"><img src="images/citrus.jpg" alt="Citrus" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;66</span><span class="rl-title">CITRUS</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="frostbitten" data-title="Frostbitten" data-fr="67" style="--span:3">
+<div class="ph-img tight"><img src="images/frostbitten.jpg" alt="Frostbitten" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;67</span><span class="rl-title">FROSTBITTEN</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="resident" data-title="Resident" data-fr="68" style="--span:3">
+<div class="ph-img tight"><img src="images/resident.jpg" alt="Resident" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
+<figcaption class="rebate"><span class="fr">FR&nbsp;68</span><span class="rl-title">RESIDENT</span><span class="perf" aria-hidden="true"></span></figcaption>
+</figure>
+<figure class="ph" data-slug="painted-rocks" data-title="Painted Rocks" data-fr="69" style="--span:3">
 <div class="ph-img tight"><img src="images/painted-rocks.jpg" alt="Painted Rocks" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;65</span><span class="rl-title">PAINTED ROCKS</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="last-light-folsom" data-title="Last Light, Folsom Lake" data-fr="66" style="--span:3">
-<div class="ph-img tight"><img src="images/last-light-folsom.jpg" alt="Last Light, Folsom Lake" width="1600" height="1067" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;66</span><span class="rl-title">LAST LIGHT, FOLSOM LAKE</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="storm-drain" data-title="Storm Drain (composite)" data-fr="67" style="--span:3">
-<div class="ph-img tight"><img src="images/storm-drain.jpg" alt="Storm Drain (composite)" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;67</span><span class="rl-title">STORM DRAIN (COMPOSITE)</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="yellow-pull" data-title="Yellow Pull" data-fr="68" style="--span:3">
-<div class="ph-img tight"><img src="images/yellow-pull.jpg" alt="Yellow Pull" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;68</span><span class="rl-title">YELLOW PULL</span><span class="perf" aria-hidden="true"></span></figcaption>
-</figure>
-<figure class="ph" data-slug="canopy-and-sky" data-title="Canopy &amp; Sky" data-fr="69" style="--span:3">
-<div class="ph-img tight"><img src="images/canopy-and-sky.jpg" alt="Canopy &amp; Sky" width="1400" height="933" loading="lazy" decoding="async" class="crop"></div>
-<figcaption class="rebate"><span class="fr">FR&nbsp;69</span><span class="rl-title">CANOPY &AMP; SKY</span><span class="perf" aria-hidden="true"></span></figcaption>
+<figcaption class="rebate"><span class="fr">FR&nbsp;69</span><span class="rl-title">PAINTED ROCKS</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
 
