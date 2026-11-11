@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dustin Wagner · Fine Art Photography</title>
 <meta name="description" content="Selected fine art photography by Dustin Wagner: 73 frames across ten series. Folsom, California.">
+<meta name="theme-color" content="#0d0c0a">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://dustinrwagner.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dustin Wagner">
+<meta property="og:title" content="Dustin Wagner · Fine Art Photography">
+<meta property="og:description" content="Selected works: 73 frames across ten series. Folsom, California.">
+<meta property="og:url" content="https://dustinrwagner.com/">
+<meta property="og:image" content="https://dustinrwagner.com/images/hero-silhouette.jpg">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1600">
+<meta property="og:image:alt" content="Silhouette of the photographer holding a camera against the sun">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.className='js'</script>
+<link rel="preload" as="image" href="images/hero-silhouette.jpg" fetchpriority="high">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -20,7 +35,9 @@
   --max:1400px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:var(--ink)}
+section[id],nav[id]{scroll-margin-top:3.6rem}
+:focus-visible{outline:1px solid var(--amber);outline-offset:3px}
 body{background:var(--ink);color:var(--paper);font-family:var(--body);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
 ::selection{background:var(--amber);color:var(--ink)}
 img{display:block;max-width:100%;height:auto}
@@ -39,25 +56,34 @@ backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .navlinks{display:flex;gap:1.4rem;margin-left:auto;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em}
 .navlinks a{text-decoration:none;color:var(--muted);transition:color .25s;padding:.3rem 0}
 .navlinks a:hover,.navlinks a:focus-visible{color:var(--amber)}
-@media(max-width:900px){.navlinks a.hidemid{display:none}}
-@media(max-width:560px){.navlinks{gap:1rem}.navlinks a.hidesm{display:none}}
+.navlinks a.showmid{display:none}
+@media(max-width:1180px){.navlinks a.hidemid{display:none}.navlinks a.showmid{display:inline}}
+@media(max-width:560px){.navlinks{gap:1.2rem}}
 
 /* hero */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
 .hero-img{position:absolute;inset:0}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 32%}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 32%;animation:settle 2.8s cubic-bezier(.2,.6,.2,1) both}
+@keyframes settle{from{opacity:0;transform:scale(1.07)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero-inner>*,h1 .ln1,h1 .ln2{animation:rise 1.2s cubic-bezier(.2,.6,.2,1) both}
+.hero-inner>h1{animation:none}
+.eyebrow{animation-delay:.35s}h1 .ln1{animation-delay:.5s}h1 .ln2{animation-delay:.68s}
+.hero-inner>.hero-sub{animation-delay:.95s}.hero-inner>.hero-meta{animation-delay:1.15s}
+@media(max-width:720px){.hero-img img{object-position:74% 30%}}
 .hero-scrim{position:absolute;inset:0;background:
 linear-gradient(180deg,rgba(13,12,10,.55) 0%,rgba(13,12,10,.05) 34%,rgba(13,12,10,.12) 62%,rgba(13,12,10,.94) 100%)}
 .hero-inner{position:relative;z-index:2;padding:0 clamp(1rem,4vw,3rem) clamp(1.4rem,3.5vh,2.6rem);max-width:var(--max);margin:0 auto;width:100%}
 .eyebrow{font-family:var(--mono);font-size:clamp(.6rem,1.4vw,.74rem);letter-spacing:.34em;color:var(--amber);margin-bottom:1rem}
-h1{font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(3.4rem,11.5vw,10.5rem);line-height:.94;letter-spacing:-.015em;text-wrap:balance}
-h1 .ln2{display:block;padding-left:clamp(1.2rem,8vw,7rem)}
-.hero-sub{margin-top:1.4rem;max-width:34rem;color:rgba(239,234,224,.82);font-size:clamp(.92rem,1.6vw,1.05rem)}
-.hero-stats{display:flex;flex-wrap:wrap;gap:0;margin-top:clamp(1.4rem,3vh,2.4rem);border-top:1px solid var(--rule)}
-.stat{padding:1rem clamp(1rem,3vw,2.4rem) .2rem 0;margin-right:clamp(1rem,3vw,2.4rem);border-right:1px solid var(--rule-soft)}
-.stat:last-child{border-right:none;margin-right:0}
-.stat b{display:block;font-family:var(--disp);font-weight:400;font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1;color:var(--paper)}
-.stat span{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;color:var(--muted)}
+h1{font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(3.4rem,9.4vw,8.8rem);line-height:.94;letter-spacing:-.015em}
+h1 .ln1,h1 .ln2{display:block}
+h1 .ln2{padding-left:clamp(1.2rem,6vw,5.5rem)}
+.hero-sub{margin-top:1.6rem;max-width:31rem;text-wrap:pretty;color:rgba(239,234,224,.82);font-size:clamp(.92rem,1.6vw,1.05rem)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.5rem 0;margin-top:clamp(1.6rem,3.5vh,2.6rem);padding-top:1.1rem;border-top:1px solid var(--rule);font-family:var(--mono);font-size:.64rem;letter-spacing:.24em;color:rgba(239,234,224,.72);max-width:calc(100% - 4rem)}
+.hero-meta span+span::before{content:"/";color:var(--amber);margin:0 1.1em}
+@media(max-width:720px){.hero-meta{max-width:none;font-size:.58rem;letter-spacing:.18em}.hero-meta span+span::before{margin:0 .7em}
+ .eyebrow{letter-spacing:.2em}
+ .hero-scrim{background:linear-gradient(180deg,rgba(13,12,10,.55) 0%,rgba(13,12,10,.05) 30%,rgba(13,12,10,.5) 58%,rgba(13,12,10,.96) 100%)}}
 .scrollcue{position:absolute;right:clamp(1rem,4vw,3rem);bottom:clamp(1.4rem,3.5vh,2.6rem);z-index:3;font-family:var(--mono);font-size:.6rem;letter-spacing:.3em;color:var(--muted);writing-mode:vertical-rl;display:flex;align-items:center;gap:.7rem}
 .scrollcue::after{content:"";width:1px;height:52px;background:linear-gradient(180deg,var(--amber),transparent);animation:drip 2.2s ease-in-out infinite}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -71,7 +97,7 @@ h1 .ln2{display:block;padding-left:clamp(1.2rem,8vw,7rem)}
 .practice-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.28em;color:var(--amber);margin-bottom:1rem}
 
 /* chapters */
-.chapter{max-width:var(--max);margin:0 auto;padding:clamp(2.2rem,6vh,4rem) clamp(1rem,4vw,3rem)}
+.chapter{max-width:var(--max);margin:0 auto;padding:clamp(3.2rem,10vh,7rem) clamp(1rem,4vw,3rem) clamp(1rem,3vh,2rem)}
 .ch-head{display:flex;align-items:flex-end;gap:clamp(1rem,3vw,2.5rem);margin-bottom:clamp(1.2rem,3vh,1.8rem);border-bottom:1px solid var(--rule);padding-bottom:1rem}
 .ch-num{font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(239,234,224,.4)}
 .ch-title{font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(1.7rem,3.8vw,2.7rem);line-height:1.05}
@@ -102,8 +128,12 @@ h1 .ln2{display:block;padding-left:clamp(1.2rem,8vw,7rem)}
 }
 
 .ph{cursor:zoom-in}
-.ph-img{overflow:hidden;background:var(--panel)}
-.ph-img img{transition:transform .8s cubic-bezier(.2,.6,.2,1),filter .8s;width:100%}
+.ph-img{overflow:hidden;background:var(--c,var(--panel))}
+.ph-img img{transition:transform .8s cubic-bezier(.2,.6,.2,1),opacity 1s ease;width:100%}
+.js .ph-img img{opacity:0}
+.js .ph-img img.ld{opacity:1}
+.rebate .rl-title{transition:color .3s}
+.ph:hover .rl-title,.ph:focus-visible .rl-title{color:var(--paper)}
 .ph:hover .ph-img img,.ph:focus-visible .ph-img img{transform:scale(1.028)}
 .rebate{display:flex;align-items:center;gap:.7rem;padding:.42rem .1rem 0;font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;color:var(--muted);white-space:nowrap;min-width:0}
 .rebate .rl-title{overflow:hidden;text-overflow:ellipsis;min-width:0}
@@ -111,27 +141,32 @@ h1 .ln2{display:block;padding-left:clamp(1.2rem,8vw,7rem)}
 .rebate .perf{flex:1;min-width:0;height:5px;background-image:radial-gradient(circle,rgba(239,234,224,.22) 1.1px,transparent 1.3px);background-size:9px 5px;background-repeat:repeat-x;background-position:left center}
 
 /* reveal */
-.ph,.af,.ch-head,.statement>*{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.6,.2,1)}
+.js .ph,.js .af,.js .ch-head,.js .statement>*,.js .kit-fig{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.6,.2,1)}
 .af-award{transition-delay:.15s}
-.in{opacity:1;transform:none}
+.js .in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
- .ph,.af,.ch-head,.statement>*{opacity:1;transform:none;transition:none}
+ .js .ph,.js .af,.js .ch-head,.js .statement>*,.js .kit-fig{opacity:1;transform:none;transition:none}
+ .js .ph-img img{opacity:1;transition:none}
+ .hero-img img,.hero-inner>*,h1 .ln1,h1 .ln2{animation:none}
+ .lb,.lb img{transition:none!important}
  .scrollcue::after{animation:none} html{scroll-behavior:auto}
 }
 
 /* series index */
-.series-index{max-width:var(--max);margin:0 auto;padding:0 clamp(1rem,4vw,3rem) clamp(2.5rem,6vh,4rem);display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(.5rem,1.2vw,1rem)}
+.series-index{max-width:var(--max);margin:0 auto;padding:0 clamp(1rem,4vw,3rem) clamp(1rem,3vh,2rem);display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(.5rem,1.2vw,1rem)}
 @media(max-width:1000px){.series-index{grid-template-columns:repeat(5,1fr)}}
 @media(max-width:560px){.series-index{grid-template-columns:repeat(2,1fr)}}
 .si{text-decoration:none;display:block}
-.si img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:grayscale(.85) contrast(1.02);transition:filter .5s;background:var(--panel)}
+.si{overflow:hidden}
+.si img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:grayscale(.85) contrast(1.02);transition:filter .6s,transform .9s cubic-bezier(.2,.6,.2,1);background:var(--panel)}
+.si:hover img,.si:focus-visible img{transform:scale(1.04)}
 .si:hover img,.si:focus-visible img{filter:grayscale(0)}
 .si span{display:flex;gap:.55rem;align-items:baseline;padding-top:.45rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;color:var(--muted)}
 .si span b{font-family:var(--disp);font-style:italic;font-weight:400;font-size:.85rem;color:var(--amber)}
 .si:hover span,.si:focus-visible span{color:var(--paper)}
 
 /* process band */
-.process{border-top:1px solid var(--rule);background:var(--panel)}
+.process{border-top:1px solid var(--rule);margin-top:clamp(3rem,8vh,6rem)}
 .process-inner{max-width:var(--max);margin:0 auto;padding:clamp(3rem,8vh,5.5rem) clamp(1rem,4vw,3rem);display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,5vw,5rem);align-items:center}
 @media(max-width:860px){.process-inner{grid-template-columns:1fr}}
 .process h2{font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;margin-bottom:1rem}
@@ -148,7 +183,7 @@ h1 .ln2{display:block;padding-left:clamp(1.2rem,8vw,7rem)}
 .navlinks a.on{color:var(--amber)}
 
 /* about */
-.about{border-top:1px solid var(--rule);background:var(--panel);margin-top:clamp(3rem,8vh,6rem)}
+.about{border-top:1px solid var(--rule);background:var(--panel)}
 .about-inner{max-width:var(--max);margin:0 auto;padding:clamp(3.5rem,9vh,6.5rem) clamp(1rem,4vw,3rem);display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2.5rem,6vw,5.5rem);align-items:center}
 @media(max-width:860px){.about-inner{grid-template-columns:1fr;gap:3.2rem}}
 .about h2{font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;margin-bottom:1.2rem}
@@ -170,7 +205,8 @@ h1 .ln2{display:block;padding-left:clamp(1.2rem,8vw,7rem)}
 .contact-lines{list-style:none}
 .contact-lines li{display:flex;align-items:baseline;gap:1.4rem;padding:.4rem 0}
 .contact-lines .cl-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;color:var(--muted);min-width:3.4rem}
-.contact-lines .cl-val{font-family:var(--mono);font-size:.84rem;letter-spacing:.06em;color:var(--paper)}
+.contact-lines .cl-val{font-family:var(--mono);font-size:.84rem;letter-spacing:.06em;color:var(--paper);text-decoration:none;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.contact-lines a.cl-val:hover,.contact-lines a.cl-val:focus-visible{color:var(--amber);border-color:var(--amber)}
 @media(max-width:600px){.cap-extra{display:none}}
 
 /* footer */
@@ -179,19 +215,24 @@ footer{border-top:1px solid var(--rule)}
 .foot-inner a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color .25s,border-color .25s}
 .foot-inner a:hover{color:var(--amber);border-color:var(--amber)}
 .foot-inner .copy{margin-left:auto}
+.foot-inner a.foot-name{font-family:var(--disp);font-style:italic;font-size:1.5rem;letter-spacing:.01em;border:none;padding:0}
+@media(max-width:600px){.foot-inner .copy{margin-left:0;width:100%}}
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:200;background:rgba(10,9,7,.96);display:none;align-items:center;justify-content:center;flex-direction:column;padding:clamp(.8rem,3vw,2.5rem)}
-.lb.open{display:flex}
-.lb img{max-width:min(94vw,1500px);max-height:78vh;width:auto;height:auto;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-.lb-cap{margin-top:1.1rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;color:var(--muted);display:flex;gap:1.2rem;align-items:center}
-.lb-cap .fr{color:var(--amber)}
-.lb button{position:absolute;background:none;border:1px solid var(--rule);color:var(--paper);font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;padding:.7rem 1rem;cursor:pointer;transition:border-color .25s,color .25s}
-.lb button:hover{border-color:var(--amber);color:var(--amber)}
-.lb-close{top:1.2rem;right:1.2rem}
-.lb-prev{left:1rem;top:50%;transform:translateY(-50%)}
-.lb-next{right:1rem;top:50%;transform:translateY(-50%)}
-@media(max-width:640px){.lb-prev,.lb-next{top:auto;bottom:1rem;transform:none}.lb-prev{left:1rem}.lb-next{right:1rem}}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(8,7,6,.975);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:3.6rem clamp(.8rem,5vw,5rem) 1.4rem;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s;touch-action:pan-y}
+.lb.open{opacity:1;visibility:visible;transition:opacity .4s ease}
+.lb-stage{flex:1;min-height:0;width:100%;display:flex;align-items:center;justify-content:center}
+.lb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 30px 90px rgba(0,0,0,.7);transition:opacity .45s ease,transform .7s cubic-bezier(.2,.6,.2,1)}
+.lb img.sw{opacity:0;transform:scale(.985)}
+.lb-cap{margin-top:1.2rem;min-height:3.2rem;text-align:center;font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;color:var(--muted)}
+.lb-cap .lb-title{display:block;font-family:var(--disp);font-style:italic;font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:.01em;color:var(--paper);line-height:1.2;margin-bottom:.45rem}
+.lb-cap .fr{color:var(--amber);margin-right:1.2em}
+.lb button{position:absolute;background:none;border:none;color:var(--muted);font-family:var(--mono);font-size:.64rem;letter-spacing:.22em;padding:1rem;cursor:pointer;transition:color .25s}
+.lb button:hover,.lb button:focus-visible{color:var(--amber)}
+.lb-close{top:.5rem;right:clamp(.2rem,2vw,1.4rem)}
+.lb-prev,.lb-next{top:50%;transform:translateY(-50%);font-size:1.3rem!important;letter-spacing:0!important}
+.lb-prev{left:clamp(0rem,1vw,1rem)}.lb-next{right:clamp(0rem,1vw,1rem)}
+@media(max-width:640px){.lb{padding:3.4rem .8rem 3.6rem}.lb-prev,.lb-next{top:auto;bottom:.2rem;transform:none}}
 </style>
 </head>
 <body>
@@ -201,9 +242,10 @@ footer{border-top:1px solid var(--rule)}
 <nav class="topnav" aria-label="Primary">
   <a class="monogram" href="#top">D.&thinsp;Wagner</a>
   <div class="navlinks">
-    <a href="#closer">CLOSER</a>
-    <a href="#structures" class="hidesm">STRUCTURES</a>
-    <a href="#motion" class="hidesm">MOTION</a>
+    <a href="#series" class="showmid">SERIES</a>
+    <a href="#closer" class="hidemid">CLOSER</a>
+    <a href="#structures" class="hidemid">STRUCTURES</a>
+    <a href="#motion" class="hidemid">MOTION</a>
     <a href="#lastlight" class="hidemid">LAST LIGHT</a>
     <a href="#surface" class="hidemid">SURFACE</a>
     <a href="#signal" class="hidemid">SIGNAL</a>
@@ -220,14 +262,9 @@ footer{border-top:1px solid var(--rule)}
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="eyebrow">FINE ART PHOTOGRAPHY · SELECTED WORKS</p>
-    <h1>Dustin<span class="ln2">Wagner</span></h1>
+    <h1><span class="ln1">Dustin</span><span class="ln2">Wagner</span></h1>
     <p class="hero-sub">A photographic record that begins in Folsom, California, and follows the road out: light, structures, seasons, and people, built frame by frame across more than two years of continuous shooting.</p>
-    <div class="hero-stats">
-      <div class="stat"><b>73</b><span>FRAMES SELECTED</span></div>
-      <div class="stat"><b>10</b><span>SERIES</span></div>
-      <div class="stat"><b>2+</b><span>YEARS OF WORK</span></div>
-      <div class="stat"><b>100%</b><span>ORIGINAL WORK</span></div>
-    </div>
+    <p class="hero-meta"><span>73 FRAMES</span><span>TEN SERIES</span><span>FOLSOM, CALIFORNIA</span></p>
   </div>
   <div class="scrollcue">SCROLL</div>
 </header>
@@ -240,17 +277,17 @@ footer{border-top:1px solid var(--rule)}
   </ul>
 </section>
 
-<nav class="series-index" aria-label="Series index">
-  <a class="si" href="#closer"><img src="images/periwinkle.jpg" alt="" loading="lazy"><span><b>I</b>CLOSER</span></a>
-  <a class="si" href="#structures"><img src="images/colonnade.jpg" alt="" loading="lazy"><span><b>II</b>STRUCTURES</span></a>
-  <a class="si" href="#motion"><img src="images/canopy-burst.jpg" alt="" loading="lazy"><span><b>III</b>MOTION</span></a>
-  <a class="si" href="#lastlight"><img src="images/under-crossing.jpg" alt="" loading="lazy"><span><b>IV</b>LAST LIGHT</span></a>
-  <a class="si" href="#surface"><img src="images/sycamore.jpg" alt="" loading="lazy"><span><b>V</b>SURFACE</span></a>
-  <a class="si" href="#signal"><img src="images/eye-bolt.jpg" alt="" loading="lazy"><span><b>VI</b>SIGNAL</span></a>
-  <a class="si" href="#field"><img src="images/first-of-fall.jpg" alt="" loading="lazy"><span><b>VII</b>FIELD</span></a>
-  <a class="si" href="#faces"><img src="images/fence-line.jpg" alt="" loading="lazy"><span><b>VIII</b>FACES</span></a>
-  <a class="si" href="#highcountry"><img src="images/switchbacks.jpg" alt="" loading="lazy"><span><b>IX</b>HIGH COUNTRY</span></a>
-  <a class="si" href="#elsewhere"><img src="images/umbrella-street.jpg" alt="" loading="lazy"><span><b>X</b>ELSEWHERE</span></a>
+<nav class="series-index" id="series" aria-label="Series index">
+  <a class="si" href="#closer"><img src="images/periwinkle.jpg" srcset="images/480/periwinkle.jpg 480w, images/960/periwinkle.jpg 960w, images/periwinkle.jpg 1600w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>I</b>CLOSER</span></a>
+  <a class="si" href="#structures"><img src="images/colonnade.jpg" srcset="images/480/colonnade.jpg 480w, images/colonnade.jpg 1067w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>II</b>STRUCTURES</span></a>
+  <a class="si" href="#motion"><img src="images/canopy-burst.jpg" srcset="images/480/canopy-burst.jpg 480w, images/960/canopy-burst.jpg 960w, images/canopy-burst.jpg 1600w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>III</b>MOTION</span></a>
+  <a class="si" href="#lastlight"><img src="images/under-crossing.jpg" srcset="images/480/under-crossing.jpg 480w, images/960/under-crossing.jpg 960w, images/under-crossing.jpg 1600w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>IV</b>LAST LIGHT</span></a>
+  <a class="si" href="#surface"><img src="images/sycamore.jpg" srcset="images/480/sycamore.jpg 480w, images/960/sycamore.jpg 960w, images/sycamore.jpg 1600w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>V</b>SURFACE</span></a>
+  <a class="si" href="#signal"><img src="images/eye-bolt.jpg" srcset="images/480/eye-bolt.jpg 480w, images/960/eye-bolt.jpg 960w, images/eye-bolt.jpg 1400w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>VI</b>SIGNAL</span></a>
+  <a class="si" href="#field"><img src="images/first-of-fall.jpg" srcset="images/480/first-of-fall.jpg 480w, images/960/first-of-fall.jpg 960w, images/first-of-fall.jpg 1600w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>VII</b>FIELD</span></a>
+  <a class="si" href="#faces"><img src="images/fence-line.jpg" srcset="images/480/fence-line.jpg 480w, images/960/fence-line.jpg 960w, images/fence-line.jpg 1600w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>VIII</b>FACES</span></a>
+  <a class="si" href="#highcountry"><img src="images/switchbacks.jpg" srcset="images/480/switchbacks.jpg 480w, images/switchbacks.jpg 1200w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>IX</b>HIGH COUNTRY</span></a>
+  <a class="si" href="#elsewhere"><img src="images/umbrella-street.jpg" srcset="images/480/umbrella-street.jpg 480w, images/umbrella-street.jpg 960w" sizes="(max-width:560px) 50vw, (max-width:1000px) 20vw, 10vw" alt="" loading="lazy"><span><b>X</b>ELSEWHERE</span></a>
 </nav>
 
 <section class="chapter" id="closer">
@@ -262,40 +299,40 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">9&thinsp;frames</div>
 </header>
-<div class="jg"><figure class="ph" data-slug="turning-leaf" data-title="Turning Leaf" data-fr="01" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/turning-leaf.jpg" alt="Turning Leaf" width="1400" height="933" loading="lazy" decoding="async"></div>
+<div class="jg"><figure class="ph" data-slug="turning-leaf" data-title="Turning Leaf" data-fr="01" data-ar="1.5005" style="--ar:1.5005;--c:#2c2519">
+<div class="ph-img"><img src="images/turning-leaf.jpg" srcset="images/480/turning-leaf.jpg 480w, images/960/turning-leaf.jpg 960w, images/turning-leaf.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Turning Leaf" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;01</span><span class="rl-title">TURNING LEAF</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="gold-leaf" data-title="Gold Leaf" data-fr="02" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/gold-leaf.jpg" alt="Gold Leaf" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="gold-leaf" data-title="Gold Leaf" data-fr="02" data-ar="1.4995" style="--ar:1.4995;--c:#5c5137">
+<div class="ph-img"><img src="images/gold-leaf.jpg" srcset="images/480/gold-leaf.jpg 480w, images/960/gold-leaf.jpg 960w, images/gold-leaf.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Gold Leaf" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;02</span><span class="rl-title">GOLD LEAF</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="frostbitten" data-title="Frostbitten" data-fr="03" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/frostbitten.jpg" alt="Frostbitten" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="frostbitten" data-title="Frostbitten" data-fr="03" data-ar="1.5005" style="--ar:1.5005;--c:#3a2c2a">
+<div class="ph-img"><img src="images/frostbitten.jpg" srcset="images/480/frostbitten.jpg 480w, images/960/frostbitten.jpg 960w, images/frostbitten.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Frostbitten" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;03</span><span class="rl-title">FROSTBITTEN</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="dragonfruit" data-title="Dragonfruit" data-fr="04" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/dragonfruit.jpg" alt="Dragonfruit" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="dragonfruit" data-title="Dragonfruit" data-fr="04" data-ar="1.4995" style="--ar:1.4995;--c:#704149">
+<div class="ph-img"><img src="images/dragonfruit.jpg" srcset="images/480/dragonfruit.jpg 480w, images/960/dragonfruit.jpg 960w, images/dragonfruit.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Dragonfruit" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;04</span><span class="rl-title">DRAGONFRUIT</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="periwinkle" data-title="Periwinkle" data-fr="05" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/periwinkle.jpg" alt="Periwinkle" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="periwinkle" data-title="Periwinkle" data-fr="05" data-ar="1.4995" style="--ar:1.4995;--c:#302046">
+<div class="ph-img"><img src="images/periwinkle.jpg" srcset="images/480/periwinkle.jpg 480w, images/960/periwinkle.jpg 960w, images/periwinkle.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Periwinkle" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;05</span><span class="rl-title">PERIWINKLE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="winter-holly" data-title="Winter Holly" data-fr="06" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/winter-holly.jpg" alt="Winter Holly" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="winter-holly" data-title="Winter Holly" data-fr="06" data-ar="1.4995" style="--ar:1.4995;--c:#3a2e31">
+<div class="ph-img"><img src="images/winter-holly.jpg" srcset="images/480/winter-holly.jpg 480w, images/960/winter-holly.jpg 960w, images/winter-holly.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Winter Holly" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;06</span><span class="rl-title">WINTER HOLLY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="gills" data-title="Gills" data-fr="07" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/gills.jpg" alt="Gills" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="gills" data-title="Gills" data-fr="07" data-ar="1.4995" style="--ar:1.4995;--c:#252525">
+<div class="ph-img"><img src="images/gills.jpg" srcset="images/480/gills.jpg 480w, images/960/gills.jpg 960w, images/gills.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Gills" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;07</span><span class="rl-title">GILLS</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="crane-fly" data-title="Crane Fly" data-fr="08" data-ar="1.4311" style="--ar:1.4311">
-<div class="ph-img"><img src="images/crane-fly.jpg" alt="Crane Fly" width="1600" height="1118" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="crane-fly" data-title="Crane Fly" data-fr="08" data-ar="1.4311" style="--ar:1.4311;--c:#4b4b4b">
+<div class="ph-img"><img src="images/crane-fly.jpg" srcset="images/480/crane-fly.jpg 480w, images/960/crane-fly.jpg 960w, images/crane-fly.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Crane Fly" width="1600" height="1118" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;08</span><span class="rl-title">CRANE FLY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="after-the-rain" data-title="After the Rain" data-fr="09" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/after-the-rain.jpg" alt="After the Rain" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="after-the-rain" data-title="After the Rain" data-fr="09" data-ar="1.4995" style="--ar:1.4995;--c:#3d3d3d">
+<div class="ph-img"><img src="images/after-the-rain.jpg" srcset="images/480/after-the-rain.jpg 480w, images/960/after-the-rain.jpg 960w, images/after-the-rain.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="After the Rain" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;09</span><span class="rl-title">AFTER THE RAIN</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
@@ -309,40 +346,40 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">9&thinsp;frames</div>
 </header>
-<div class="jg"><figure class="ph" data-slug="colonnade" data-title="Colonnade" data-fr="10" data-ar="0.6669" style="--ar:0.6669">
-<div class="ph-img"><img src="images/colonnade.jpg" alt="Colonnade" width="1067" height="1600" loading="lazy" decoding="async"></div>
+<div class="jg"><figure class="ph" data-slug="colonnade" data-title="Colonnade" data-fr="10" data-ar="0.6669" style="--ar:0.6669;--c:#232323">
+<div class="ph-img"><img src="images/colonnade.jpg" srcset="images/480/colonnade.jpg 480w, images/colonnade.jpg 1067w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Colonnade" width="1067" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;10</span><span class="rl-title">COLONNADE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="through-canopy" data-title="Morning Through the Canopy" data-fr="11" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/through-canopy.jpg" alt="Morning Through the Canopy" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="through-canopy" data-title="Morning Through the Canopy" data-fr="11" data-ar="1.4995" style="--ar:1.4995;--c:#252525">
+<div class="ph-img"><img src="images/through-canopy.jpg" srcset="images/480/through-canopy.jpg 480w, images/960/through-canopy.jpg 960w, images/through-canopy.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Morning Through the Canopy" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;11</span><span class="rl-title">MORNING THROUGH THE CANOPY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="cross-brace" data-title="Cross-Brace" data-fr="12" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/cross-brace.jpg" alt="Cross-Brace" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="cross-brace" data-title="Cross-Brace" data-fr="12" data-ar="1.4995" style="--ar:1.4995;--c:#1e1e1e">
+<div class="ph-img"><img src="images/cross-brace.jpg" srcset="images/480/cross-brace.jpg 480w, images/960/cross-brace.jpg 960w, images/cross-brace.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Cross-Brace" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;12</span><span class="rl-title">CROSS-BRACE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="doorway" data-title="Doorway" data-fr="13" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/doorway.jpg" alt="Doorway" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="doorway" data-title="Doorway" data-fr="13" data-ar="1.4995" style="--ar:1.4995;--c:#2a2a2a">
+<div class="ph-img"><img src="images/doorway.jpg" srcset="images/480/doorway.jpg 480w, images/960/doorway.jpg 960w, images/doorway.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Doorway" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;13</span><span class="rl-title">DOORWAY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="blinds" data-title="Blinds" data-fr="14" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/blinds.jpg" alt="Blinds" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="blinds" data-title="Blinds" data-fr="14" data-ar="1.4995" style="--ar:1.4995;--c:#303032">
+<div class="ph-img"><img src="images/blinds.jpg" srcset="images/480/blinds.jpg 480w, images/960/blinds.jpg 960w, images/blinds.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Blinds" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;14</span><span class="rl-title">BLINDS</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="elevator" data-title="Elevator" data-fr="15" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/elevator.jpg" alt="Elevator" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="elevator" data-title="Elevator" data-fr="15" data-ar="1.4995" style="--ar:1.4995;--c:#2d2d2d">
+<div class="ph-img"><img src="images/elevator.jpg" srcset="images/480/elevator.jpg 480w, images/960/elevator.jpg 960w, images/elevator.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Elevator" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;15</span><span class="rl-title">ELEVATOR</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="apex" data-title="Apex" data-fr="16" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/apex.jpg" alt="Apex" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="apex" data-title="Apex" data-fr="16" data-ar="1.4995" style="--ar:1.4995;--c:#4d4d4d">
+<div class="ph-img"><img src="images/apex.jpg" srcset="images/480/apex.jpg 480w, images/960/apex.jpg 960w, images/apex.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Apex" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;16</span><span class="rl-title">APEX</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="mission-bell" data-title="Mission Bell" data-fr="17" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/mission-bell.jpg" alt="Mission Bell" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="mission-bell" data-title="Mission Bell" data-fr="17" data-ar="0.7500" style="--ar:0.7500;--c:#373737">
+<div class="ph-img"><img src="images/mission-bell.jpg" srcset="images/480/mission-bell.jpg 480w, images/mission-bell.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Mission Bell" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;17</span><span class="rl-title">MISSION BELL</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="corner-study" data-title="Corner Study" data-fr="18" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/corner-study.jpg" alt="Corner Study" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="corner-study" data-title="Corner Study" data-fr="18" data-ar="1.4995" style="--ar:1.4995;--c:#3a3a3a">
+<div class="ph-img"><img src="images/corner-study.jpg" srcset="images/480/corner-study.jpg 480w, images/960/corner-study.jpg 960w, images/corner-study.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Corner Study" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;18</span><span class="rl-title">CORNER STUDY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
@@ -356,28 +393,28 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">6&thinsp;frames</div>
 </header>
-<div class="jg"><figure class="ph" data-slug="canopy-burst" data-title="Canopy Burst" data-fr="19" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/canopy-burst.jpg" alt="Canopy Burst" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<div class="jg"><figure class="ph" data-slug="canopy-burst" data-title="Canopy Burst" data-fr="19" data-ar="1.4995" style="--ar:1.4995;--c:#3c3e4a">
+<div class="ph-img"><img src="images/canopy-burst.jpg" srcset="images/480/canopy-burst.jpg 480w, images/960/canopy-burst.jpg 960w, images/canopy-burst.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Canopy Burst" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;19</span><span class="rl-title">CANOPY BURST</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="garden-velocity" data-title="Garden Velocity" data-fr="20" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/garden-velocity.jpg" alt="Garden Velocity" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="garden-velocity" data-title="Garden Velocity" data-fr="20" data-ar="1.4995" style="--ar:1.4995;--c:#26191a">
+<div class="ph-img"><img src="images/garden-velocity.jpg" srcset="images/480/garden-velocity.jpg 480w, images/960/garden-velocity.jpg 960w, images/garden-velocity.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Garden Velocity" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;20</span><span class="rl-title">GARDEN VELOCITY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="yellow-pull" data-title="Yellow Pull" data-fr="21" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/yellow-pull.jpg" alt="Yellow Pull" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="yellow-pull" data-title="Yellow Pull" data-fr="21" data-ar="1.5005" style="--ar:1.5005;--c:#1b1914">
+<div class="ph-img"><img src="images/yellow-pull.jpg" srcset="images/480/yellow-pull.jpg 480w, images/960/yellow-pull.jpg 960w, images/yellow-pull.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Yellow Pull" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;21</span><span class="rl-title">YELLOW PULL</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="light-curtain" data-title="Light Curtain" data-fr="22" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/light-curtain.jpg" alt="Light Curtain" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="light-curtain" data-title="Light Curtain" data-fr="22" data-ar="1.4995" style="--ar:1.4995;--c:#171b1f">
+<div class="ph-img"><img src="images/light-curtain.jpg" srcset="images/480/light-curtain.jpg 480w, images/960/light-curtain.jpg 960w, images/light-curtain.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Light Curtain" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;22</span><span class="rl-title">LIGHT CURTAIN</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="percussion" data-title="Percussion" data-fr="23" data-ar="1.0547" style="--ar:1.0547">
-<div class="ph-img"><img src="images/percussion.jpg" alt="Percussion" width="1600" height="1517" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="percussion" data-title="Percussion" data-fr="23" data-ar="1.0547" style="--ar:1.0547;--c:#24262a">
+<div class="ph-img"><img src="images/percussion.jpg" srcset="images/480/percussion.jpg 480w, images/960/percussion.jpg 960w, images/percussion.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Percussion" width="1600" height="1517" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;23</span><span class="rl-title">PERCUSSION</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="spin-cycle" data-title="Spin Cycle" data-fr="24" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/spin-cycle.jpg" alt="Spin Cycle" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="spin-cycle" data-title="Spin Cycle" data-fr="24" data-ar="1.4995" style="--ar:1.4995;--c:#271b17">
+<div class="ph-img"><img src="images/spin-cycle.jpg" srcset="images/480/spin-cycle.jpg 480w, images/960/spin-cycle.jpg 960w, images/spin-cycle.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Spin Cycle" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;24</span><span class="rl-title">SPIN CYCLE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
@@ -391,24 +428,24 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">5&thinsp;frames</div>
 </header>
-<div class="feature"><figure class="ph ph-lead" data-slug="under-crossing" data-title="Under the Crossing" data-fr="25" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/under-crossing.jpg" alt="Under the Crossing" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<div class="feature"><figure class="ph ph-lead" data-slug="under-crossing" data-title="Under the Crossing" data-fr="25" data-ar="1.4995" style="--ar:1.4995;--c:#141414">
+<div class="ph-img"><img src="images/under-crossing.jpg" srcset="images/480/under-crossing.jpg 480w, images/960/under-crossing.jpg 960w, images/under-crossing.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Under the Crossing" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;25</span><span class="rl-title">UNDER THE CROSSING</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<div class="stack stack-l"><figure class="ph" data-slug="night-lantern" data-title="Night Lantern" data-fr="26" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/night-lantern.jpg" alt="Night Lantern" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<div class="stack stack-l"><figure class="ph" data-slug="night-lantern" data-title="Night Lantern" data-fr="26" data-ar="1.4995" style="--ar:1.4995;--c:#0b0b0b">
+<div class="ph-img"><img src="images/night-lantern.jpg" srcset="images/480/night-lantern.jpg 480w, images/960/night-lantern.jpg 960w, images/night-lantern.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Night Lantern" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;26</span><span class="rl-title">NIGHT LANTERN</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="transmission" data-title="Transmission" data-fr="27" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/transmission.jpg" alt="Transmission" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="transmission" data-title="Transmission" data-fr="27" data-ar="1.4995" style="--ar:1.4995;--c:#131315">
+<div class="ph-img"><img src="images/transmission.jpg" srcset="images/480/transmission.jpg 480w, images/960/transmission.jpg 960w, images/transmission.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Transmission" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;27</span><span class="rl-title">TRANSMISSION</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
-<div class="stack stack-r"><figure class="ph" data-slug="falling-water" data-title="Falling Water" data-fr="28" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/falling-water.jpg" alt="Falling Water" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<div class="stack stack-r"><figure class="ph" data-slug="falling-water" data-title="Falling Water" data-fr="28" data-ar="1.4995" style="--ar:1.4995;--c:#0c0c0d">
+<div class="ph-img"><img src="images/falling-water.jpg" srcset="images/480/falling-water.jpg 480w, images/960/falling-water.jpg 960w, images/falling-water.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Falling Water" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;28</span><span class="rl-title">FALLING WATER</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="the-clearing" data-title="The Clearing" data-fr="29" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/the-clearing.jpg" alt="The Clearing" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="the-clearing" data-title="The Clearing" data-fr="29" data-ar="1.4995" style="--ar:1.4995;--c:#0e0e0e">
+<div class="ph-img"><img src="images/the-clearing.jpg" srcset="images/480/the-clearing.jpg 480w, images/960/the-clearing.jpg 960w, images/the-clearing.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="The Clearing" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;29</span><span class="rl-title">THE CLEARING</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div></div>
 </section>
@@ -422,40 +459,40 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">9&thinsp;frames</div>
 </header>
-<div class="jg"><figure class="ph" data-slug="sycamore" data-title="Sycamore" data-fr="30" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/sycamore.jpg" alt="Sycamore" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<div class="jg"><figure class="ph" data-slug="sycamore" data-title="Sycamore" data-fr="30" data-ar="1.4995" style="--ar:1.4995;--c:#443425">
+<div class="ph-img"><img src="images/sycamore.jpg" srcset="images/480/sycamore.jpg 480w, images/960/sycamore.jpg 960w, images/sycamore.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Sycamore" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;30</span><span class="rl-title">SYCAMORE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="citrus" data-title="Citrus" data-fr="31" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/citrus.jpg" alt="Citrus" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="citrus" data-title="Citrus" data-fr="31" data-ar="1.5005" style="--ar:1.5005;--c:#463720">
+<div class="ph-img"><img src="images/citrus.jpg" srcset="images/480/citrus.jpg 480w, images/960/citrus.jpg 960w, images/citrus.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Citrus" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;31</span><span class="rl-title">CITRUS</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="autumn-frame" data-title="Autumn Frame" data-fr="32" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/autumn-frame.jpg" alt="Autumn Frame" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="autumn-frame" data-title="Autumn Frame" data-fr="32" data-ar="1.5005" style="--ar:1.5005;--c:#3b3531">
+<div class="ph-img"><img src="images/autumn-frame.jpg" srcset="images/480/autumn-frame.jpg 480w, images/960/autumn-frame.jpg 960w, images/autumn-frame.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Autumn Frame" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;32</span><span class="rl-title">AUTUMN FRAME</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="charred" data-title="Charred" data-fr="33" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/charred.jpg" alt="Charred" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="charred" data-title="Charred" data-fr="33" data-ar="1.5005" style="--ar:1.5005;--c:#242021">
+<div class="ph-img"><img src="images/charred.jpg" srcset="images/480/charred.jpg 480w, images/960/charred.jpg 960w, images/charred.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Charred" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;33</span><span class="rl-title">CHARRED</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="corrugation" data-title="Corrugation" data-fr="34" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/corrugation.jpg" alt="Corrugation" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="corrugation" data-title="Corrugation" data-fr="34" data-ar="1.5005" style="--ar:1.5005;--c:#1b1814">
+<div class="ph-img"><img src="images/corrugation.jpg" srcset="images/480/corrugation.jpg 480w, images/960/corrugation.jpg 960w, images/corrugation.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Corrugation" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;34</span><span class="rl-title">CORRUGATION</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="quartz" data-title="Quartz" data-fr="35" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/quartz.jpg" alt="Quartz" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="quartz" data-title="Quartz" data-fr="35" data-ar="1.5005" style="--ar:1.5005;--c:#171615">
+<div class="ph-img"><img src="images/quartz.jpg" srcset="images/480/quartz.jpg 480w, images/960/quartz.jpg 960w, images/quartz.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Quartz" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;35</span><span class="rl-title">QUARTZ</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="condensation" data-title="Condensation" data-fr="36" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/condensation.jpg" alt="Condensation" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="condensation" data-title="Condensation" data-fr="36" data-ar="1.4995" style="--ar:1.4995;--c:#262429">
+<div class="ph-img"><img src="images/condensation.jpg" srcset="images/480/condensation.jpg 480w, images/960/condensation.jpg 960w, images/condensation.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Condensation" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;36</span><span class="rl-title">CONDENSATION</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="blue-shred" data-title="Blue Shred" data-fr="37" data-ar="0.8000" style="--ar:0.8000">
-<div class="ph-img"><img src="images/blue-shred.jpg" alt="Blue Shred" width="1120" height="1400" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="blue-shred" data-title="Blue Shred" data-fr="37" data-ar="0.8000" style="--ar:0.8000;--c:#2b3636">
+<div class="ph-img"><img src="images/blue-shred.jpg" srcset="images/480/blue-shred.jpg 480w, images/blue-shred.jpg 1120w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Blue Shred" width="1120" height="1400" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;37</span><span class="rl-title">BLUE SHRED</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="sixty-six" data-title="’66" data-fr="38" data-ar="1.5370" style="--ar:1.5370">
-<div class="ph-img"><img src="images/sixty-six.jpg" alt="’66" width="1600" height="1041" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="sixty-six" data-title="’66" data-fr="38" data-ar="1.5370" style="--ar:1.5370;--c:#18100f">
+<div class="ph-img"><img src="images/sixty-six.jpg" srcset="images/480/sixty-six.jpg 480w, images/960/sixty-six.jpg 960w, images/sixty-six.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="’66" width="1600" height="1041" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;38</span><span class="rl-title">’66</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
@@ -469,28 +506,28 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">6&thinsp;frames</div>
 </header>
-<div class="jg"><figure class="ph" data-slug="tread" data-title="Tread" data-fr="39" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/tread.jpg" alt="Tread" width="1400" height="933" loading="lazy" decoding="async"></div>
+<div class="jg"><figure class="ph" data-slug="tread" data-title="Tread" data-fr="39" data-ar="1.5005" style="--ar:1.5005;--c:#383838">
+<div class="ph-img"><img src="images/tread.jpg" srcset="images/480/tread.jpg 480w, images/960/tread.jpg 960w, images/tread.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Tread" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;39</span><span class="rl-title">TREAD</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="eye-bolt" data-title="Eye Bolt" data-fr="40" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/eye-bolt.jpg" alt="Eye Bolt" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="eye-bolt" data-title="Eye Bolt" data-fr="40" data-ar="1.5005" style="--ar:1.5005;--c:#2a2a2a">
+<div class="ph-img"><img src="images/eye-bolt.jpg" srcset="images/480/eye-bolt.jpg 480w, images/960/eye-bolt.jpg 960w, images/eye-bolt.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Eye Bolt" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;40</span><span class="rl-title">EYE BOLT</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="new-balance" data-title="New Balance" data-fr="41" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/new-balance.jpg" alt="New Balance" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="new-balance" data-title="New Balance" data-fr="41" data-ar="1.5005" style="--ar:1.5005;--c:#373737">
+<div class="ph-img"><img src="images/new-balance.jpg" srcset="images/480/new-balance.jpg 480w, images/960/new-balance.jpg 960w, images/new-balance.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="New Balance" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;41</span><span class="rl-title">NEW BALANCE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="meltwater" data-title="Meltwater" data-fr="42" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/meltwater.jpg" alt="Meltwater" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="meltwater" data-title="Meltwater" data-fr="42" data-ar="1.5005" style="--ar:1.5005;--c:#272727">
+<div class="ph-img"><img src="images/meltwater.jpg" srcset="images/480/meltwater.jpg 480w, images/960/meltwater.jpg 960w, images/meltwater.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Meltwater" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;42</span><span class="rl-title">MELTWATER</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="mesh" data-title="Mesh" data-fr="43" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/mesh.jpg" alt="Mesh" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="mesh" data-title="Mesh" data-fr="43" data-ar="1.5005" style="--ar:1.5005;--c:#161615">
+<div class="ph-img"><img src="images/mesh.jpg" srcset="images/480/mesh.jpg 480w, images/960/mesh.jpg 960w, images/mesh.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Mesh" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;43</span><span class="rl-title">MESH</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="pavement-study" data-title="Pavement Study" data-fr="44" data-ar="1.5005" style="--ar:1.5005">
-<div class="ph-img"><img src="images/pavement-study.jpg" alt="Pavement Study" width="1400" height="933" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="pavement-study" data-title="Pavement Study" data-fr="44" data-ar="1.5005" style="--ar:1.5005;--c:#444444">
+<div class="ph-img"><img src="images/pavement-study.jpg" srcset="images/480/pavement-study.jpg 480w, images/960/pavement-study.jpg 960w, images/pavement-study.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Pavement Study" width="1400" height="933" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;44</span><span class="rl-title">PAVEMENT STUDY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
@@ -504,32 +541,32 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">7&thinsp;frames</div>
 </header>
-<div class="jg"><figure class="ph" data-slug="cloud-cover" data-title="Cloud Cover" data-fr="45" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/cloud-cover.jpg" alt="Cloud Cover" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<div class="jg"><figure class="ph" data-slug="cloud-cover" data-title="Cloud Cover" data-fr="45" data-ar="1.4995" style="--ar:1.4995;--c:#424344">
+<div class="ph-img"><img src="images/cloud-cover.jpg" srcset="images/480/cloud-cover.jpg 480w, images/960/cloud-cover.jpg 960w, images/cloud-cover.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Cloud Cover" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;45</span><span class="rl-title">CLOUD COVER</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="zinnia-field" data-title="Zinnia Field" data-fr="46" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/zinnia-field.jpg" alt="Zinnia Field" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="zinnia-field" data-title="Zinnia Field" data-fr="46" data-ar="0.7500" style="--ar:0.7500;--c:#302820">
+<div class="ph-img"><img src="images/zinnia-field.jpg" srcset="images/480/zinnia-field.jpg 480w, images/zinnia-field.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Zinnia Field" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;46</span><span class="rl-title">ZINNIA FIELD</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="winter-oak" data-title="Winter Oak" data-fr="47" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/winter-oak.jpg" alt="Winter Oak" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="winter-oak" data-title="Winter Oak" data-fr="47" data-ar="1.4995" style="--ar:1.4995;--c:#1e2834">
+<div class="ph-img"><img src="images/winter-oak.jpg" srcset="images/480/winter-oak.jpg 480w, images/960/winter-oak.jpg 960w, images/winter-oak.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Winter Oak" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;47</span><span class="rl-title">WINTER OAK</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="first-of-fall" data-title="First of Fall" data-fr="48" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/first-of-fall.jpg" alt="First of Fall" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="first-of-fall" data-title="First of Fall" data-fr="48" data-ar="1.4995" style="--ar:1.4995;--c:#2a2a18">
+<div class="ph-img"><img src="images/first-of-fall.jpg" srcset="images/480/first-of-fall.jpg 480w, images/960/first-of-fall.jpg 960w, images/first-of-fall.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="First of Fall" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;48</span><span class="rl-title">FIRST OF FALL</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="winter-visitor" data-title="Winter Visitor" data-fr="49" data-ar="1.1569" style="--ar:1.1569">
-<div class="ph-img"><img src="images/winter-visitor.jpg" alt="Winter Visitor" width="1600" height="1383" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="winter-visitor" data-title="Winter Visitor" data-fr="49" data-ar="1.1569" style="--ar:1.1569;--c:#565347">
+<div class="ph-img"><img src="images/winter-visitor.jpg" srcset="images/480/winter-visitor.jpg 480w, images/960/winter-visitor.jpg 960w, images/winter-visitor.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Winter Visitor" width="1600" height="1383" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;49</span><span class="rl-title">WINTER VISITOR</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="moss-and-bark" data-title="Moss &amp; Bark" data-fr="50" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/moss-and-bark.jpg" alt="Moss &amp; Bark" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="moss-and-bark" data-title="Moss &amp; Bark" data-fr="50" data-ar="1.4995" style="--ar:1.4995;--c:#383531">
+<div class="ph-img"><img src="images/moss-and-bark.jpg" srcset="images/480/moss-and-bark.jpg 480w, images/960/moss-and-bark.jpg 960w, images/moss-and-bark.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Moss &amp; Bark" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;50</span><span class="rl-title">MOSS &amp; BARK</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="golden-hour" data-title="Golden Hour" data-fr="51" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/golden-hour.jpg" alt="Golden Hour" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="golden-hour" data-title="Golden Hour" data-fr="51" data-ar="1.4995" style="--ar:1.4995;--c:#2d2722">
+<div class="ph-img"><img src="images/golden-hour.jpg" srcset="images/480/golden-hour.jpg 480w, images/960/golden-hour.jpg 960w, images/golden-hour.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Golden Hour" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;51</span><span class="rl-title">GOLDEN HOUR</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
@@ -543,20 +580,20 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">4&thinsp;frames</div>
 </header>
-<div class="jg"><figure class="ph" data-slug="low-key" data-title="Study in Low Key" data-fr="52" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/low-key.jpg" alt="Study in Low Key" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<div class="jg"><figure class="ph" data-slug="low-key" data-title="Study in Low Key" data-fr="52" data-ar="1.4995" style="--ar:1.4995;--c:#0c0b0a">
+<div class="ph-img"><img src="images/low-key.jpg" srcset="images/480/low-key.jpg 480w, images/960/low-key.jpg 960w, images/low-key.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Study in Low Key" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;52</span><span class="rl-title">STUDY IN LOW KEY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="fence-line" data-title="Fence Line" data-fr="53" data-ar="1.3998" style="--ar:1.3998">
-<div class="ph-img"><img src="images/fence-line.jpg" alt="Fence Line" width="1600" height="1143" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="fence-line" data-title="Fence Line" data-fr="53" data-ar="1.3998" style="--ar:1.3998;--c:#414141">
+<div class="ph-img"><img src="images/fence-line.jpg" srcset="images/480/fence-line.jpg 480w, images/960/fence-line.jpg 960w, images/fence-line.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Fence Line" width="1600" height="1143" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;53</span><span class="rl-title">FENCE LINE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="the-stairwell" data-title="The Stairwell" data-fr="54" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/the-stairwell.jpg" alt="The Stairwell" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="the-stairwell" data-title="The Stairwell" data-fr="54" data-ar="1.4995" style="--ar:1.4995;--c:#373737">
+<div class="ph-img"><img src="images/the-stairwell.jpg" srcset="images/480/the-stairwell.jpg 480w, images/960/the-stairwell.jpg 960w, images/the-stairwell.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="The Stairwell" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;54</span><span class="rl-title">THE STAIRWELL</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="descent" data-title="Descent" data-fr="55" data-ar="1.4995" style="--ar:1.4995">
-<div class="ph-img"><img src="images/descent.jpg" alt="Descent" width="1600" height="1067" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="descent" data-title="Descent" data-fr="55" data-ar="1.4995" style="--ar:1.4995;--c:#353535">
+<div class="ph-img"><img src="images/descent.jpg" srcset="images/480/descent.jpg 480w, images/960/descent.jpg 960w, images/descent.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Descent" width="1600" height="1067" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;55</span><span class="rl-title">DESCENT</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
@@ -570,36 +607,36 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">8&thinsp;frames</div>
 </header>
-<div class="jg"><figure class="ph" data-slug="switchbacks" data-title="Switchbacks Before Dawn" data-fr="56" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/switchbacks.jpg" alt="Switchbacks Before Dawn" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<div class="jg"><figure class="ph" data-slug="switchbacks" data-title="Switchbacks Before Dawn" data-fr="56" data-ar="0.7500" style="--ar:0.7500;--c:#222526">
+<div class="ph-img"><img src="images/switchbacks.jpg" srcset="images/480/switchbacks.jpg 480w, images/switchbacks.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Switchbacks Before Dawn" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;56</span><span class="rl-title">SWITCHBACKS BEFORE DAWN</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="above-the-clouds" data-title="Above the Clouds" data-fr="57" data-ar="1.3333" style="--ar:1.3333">
-<div class="ph-img"><img src="images/above-the-clouds.jpg" alt="Above the Clouds" width="1600" height="1200" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="above-the-clouds" data-title="Above the Clouds" data-fr="57" data-ar="1.3333" style="--ar:1.3333;--c:#2f2825">
+<div class="ph-img"><img src="images/above-the-clouds.jpg" srcset="images/480/above-the-clouds.jpg 480w, images/960/above-the-clouds.jpg 960w, images/above-the-clouds.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Above the Clouds" width="1600" height="1200" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;57</span><span class="rl-title">ABOVE THE CLOUDS</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="granite-wall" data-title="Granite Wall" data-fr="58" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/granite-wall.jpg" alt="Granite Wall" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="granite-wall" data-title="Granite Wall" data-fr="58" data-ar="0.7500" style="--ar:0.7500;--c:#333d48">
+<div class="ph-img"><img src="images/granite-wall.jpg" srcset="images/480/granite-wall.jpg 480w, images/granite-wall.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Granite Wall" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;58</span><span class="rl-title">GRANITE WALL</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="still-water" data-title="Still Water" data-fr="59" data-ar="0.5625" style="--ar:0.5625">
-<div class="ph-img"><img src="images/still-water.jpg" alt="Still Water" width="900" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="still-water" data-title="Still Water" data-fr="59" data-ar="0.5625" style="--ar:0.5625;--c:#3b3939">
+<div class="ph-img"><img src="images/still-water.jpg" srcset="images/480/still-water.jpg 480w, images/still-water.jpg 900w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Still Water" width="900" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;59</span><span class="rl-title">STILL WATER</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="summit-hut" data-title="Summit Shelter" data-fr="60" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/summit-hut.jpg" alt="Summit Shelter" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="summit-hut" data-title="Summit Shelter" data-fr="60" data-ar="0.7500" style="--ar:0.7500;--c:#3b434e">
+<div class="ph-img"><img src="images/summit-hut.jpg" srcset="images/480/summit-hut.jpg 480w, images/summit-hut.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Summit Shelter" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;60</span><span class="rl-title">SUMMIT SHELTER</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="night-sky" data-title="Night Sky" data-fr="61" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/night-sky.jpg" alt="Night Sky" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="night-sky" data-title="Night Sky" data-fr="61" data-ar="0.7500" style="--ar:0.7500;--c:#0b0e14">
+<div class="ph-img"><img src="images/night-sky.jpg" srcset="images/480/night-sky.jpg 480w, images/night-sky.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Night Sky" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;61</span><span class="rl-title">NIGHT SKY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="above-the-lake" data-title="Above the Lake" data-fr="62" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/above-the-lake.jpg" alt="Above the Lake" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="above-the-lake" data-title="Above the Lake" data-fr="62" data-ar="0.7500" style="--ar:0.7500;--c:#323c48">
+<div class="ph-img"><img src="images/above-the-lake.jpg" srcset="images/480/above-the-lake.jpg 480w, images/above-the-lake.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Above the Lake" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;62</span><span class="rl-title">ABOVE THE LAKE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="night-lift" data-title="Night Lift" data-fr="63" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/night-lift.jpg" alt="Night Lift" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="night-lift" data-title="Night Lift" data-fr="63" data-ar="0.7500" style="--ar:0.7500;--c:#151512">
+<div class="ph-img"><img src="images/night-lift.jpg" srcset="images/480/night-lift.jpg 480w, images/night-lift.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Night Lift" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;63</span><span class="rl-title">NIGHT LIFT</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
@@ -613,44 +650,44 @@ footer{border-top:1px solid var(--rule)}
   </div>
   <div class="ch-count">10&thinsp;frames</div>
 </header>
-<div class="jg"><figure class="ph" data-slug="umbrella-street" data-title="Umbrella Street" data-fr="64" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/umbrella-street.jpg" alt="Umbrella Street" width="960" height="1280" loading="lazy" decoding="async"></div>
+<div class="jg"><figure class="ph" data-slug="umbrella-street" data-title="Umbrella Street" data-fr="64" data-ar="0.7500" style="--ar:0.7500;--c:#2e2c2f">
+<div class="ph-img"><img src="images/umbrella-street.jpg" srcset="images/480/umbrella-street.jpg 480w, images/umbrella-street.jpg 960w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Umbrella Street" width="960" height="1280" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;64</span><span class="rl-title">UMBRELLA STREET</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="the-arch" data-title="The Arch" data-fr="65" data-ar="1.3333" style="--ar:1.3333">
-<div class="ph-img"><img src="images/the-arch.jpg" alt="The Arch" width="1600" height="1200" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="the-arch" data-title="The Arch" data-fr="65" data-ar="1.3333" style="--ar:1.3333;--c:#3f3e3b">
+<div class="ph-img"><img src="images/the-arch.jpg" srcset="images/480/the-arch.jpg 480w, images/960/the-arch.jpg 960w, images/the-arch.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="The Arch" width="1600" height="1200" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;65</span><span class="rl-title">THE ARCH</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="nave" data-title="Nave" data-fr="66" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/nave.jpg" alt="Nave" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="nave" data-title="Nave" data-fr="66" data-ar="0.7500" style="--ar:0.7500;--c:#352e24">
+<div class="ph-img"><img src="images/nave.jpg" srcset="images/480/nave.jpg 480w, images/nave.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Nave" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;66</span><span class="rl-title">NAVE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="tricolore" data-title="Tricolore" data-fr="67" data-ar="0.5625" style="--ar:0.5625">
-<div class="ph-img"><img src="images/tricolore.jpg" alt="Tricolore" width="900" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="tricolore" data-title="Tricolore" data-fr="67" data-ar="0.5625" style="--ar:0.5625;--c:#18324e">
+<div class="ph-img"><img src="images/tricolore.jpg" srcset="images/480/tricolore.jpg 480w, images/tricolore.jpg 900w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Tricolore" width="900" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;67</span><span class="rl-title">TRICOLORE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="framed-tower" data-title="Framed Tower" data-fr="68" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/framed-tower.jpg" alt="Framed Tower" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="framed-tower" data-title="Framed Tower" data-fr="68" data-ar="0.7500" style="--ar:0.7500;--c:#242b31">
+<div class="ph-img"><img src="images/framed-tower.jpg" srcset="images/480/framed-tower.jpg 480w, images/framed-tower.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Framed Tower" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;68</span><span class="rl-title">FRAMED TOWER</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="the-dragon" data-title="The Dragon" data-fr="69" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/the-dragon.jpg" alt="The Dragon" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="the-dragon" data-title="The Dragon" data-fr="69" data-ar="0.7500" style="--ar:0.7500;--c:#181925">
+<div class="ph-img"><img src="images/the-dragon.jpg" srcset="images/480/the-dragon.jpg 480w, images/the-dragon.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="The Dragon" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;69</span><span class="rl-title">THE DRAGON</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="stadium" data-title="Stadium" data-fr="70" data-ar="1.3333" style="--ar:1.3333">
-<div class="ph-img"><img src="images/stadium.jpg" alt="Stadium" width="1600" height="1200" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="stadium" data-title="Stadium" data-fr="70" data-ar="1.3333" style="--ar:1.3333;--c:#36362b">
+<div class="ph-img"><img src="images/stadium.jpg" srcset="images/480/stadium.jpg 480w, images/960/stadium.jpg 960w, images/stadium.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Stadium" width="1600" height="1200" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;70</span><span class="rl-title">STADIUM</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="the-bay" data-title="The Bay" data-fr="71" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/the-bay.jpg" alt="The Bay" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="the-bay" data-title="The Bay" data-fr="71" data-ar="0.7500" style="--ar:0.7500;--c:#3f4641">
+<div class="ph-img"><img src="images/the-bay.jpg" srcset="images/480/the-bay.jpg 480w, images/the-bay.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="The Bay" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;71</span><span class="rl-title">THE BAY</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="blowhole" data-title="Blowhole" data-fr="72" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/blowhole.jpg" alt="Blowhole" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="blowhole" data-title="Blowhole" data-fr="72" data-ar="0.7500" style="--ar:0.7500;--c:#2b425a">
+<div class="ph-img"><img src="images/blowhole.jpg" srcset="images/480/blowhole.jpg 480w, images/blowhole.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Blowhole" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;72</span><span class="rl-title">BLOWHOLE</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure>
-<figure class="ph" data-slug="through-the-bar" data-title="Through the Bar" data-fr="73" data-ar="0.7500" style="--ar:0.7500">
-<div class="ph-img"><img src="images/through-the-bar.jpg" alt="Through the Bar" width="1200" height="1600" loading="lazy" decoding="async"></div>
+<figure class="ph" data-slug="through-the-bar" data-title="Through the Bar" data-fr="73" data-ar="0.7500" style="--ar:0.7500;--c:#3c372f">
+<div class="ph-img"><img src="images/through-the-bar.jpg" srcset="images/480/through-the-bar.jpg 480w, images/through-the-bar.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Through the Bar" width="1200" height="1600" loading="lazy" decoding="async"></div>
 <figcaption class="rebate"><span class="fr">FR&nbsp;73</span><span class="rl-title">THROUGH THE BAR</span><span class="perf" aria-hidden="true"></span></figcaption>
 </figure></div>
 </section>
@@ -664,7 +701,7 @@ footer{border-top:1px solid var(--rule)}
       <p class="process-note">No AI-generated imagery. No stock. No borrowed frames.</p>
     </div>
     <figure class="kit-fig">
-      <div class="ph-img"><img src="images/the-kit.jpg" alt="Canon EF-S 18-55mm lens" width="1400" height="933" loading="lazy"></div>
+      <div class="ph-img"><img src="images/the-kit.jpg" srcset="images/480/the-kit.jpg 480w, images/960/the-kit.jpg 960w, images/the-kit.jpg 1400w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Canon EF-S 18-55mm lens" width="1400" height="933" loading="lazy"></div>
       <figcaption class="rebate"><span class="fr">KIT</span><span class="rl-title">CANON EF-S 18&ndash;55MM F/3.5&ndash;5.6</span><span class="perf" aria-hidden="true"></span></figcaption>
     </figure>
   </div>
@@ -676,10 +713,10 @@ footer{border-top:1px solid var(--rule)}
     <div class="about-photos">
       <figure class="af af-portrait">
         <figcaption class="rebate"><span class="fr">DW</span><span class="rl-title">THE PHOTOGRAPHER<span class="cap-extra"> · FOLSOM, CA</span></span><span class="perf" aria-hidden="true"></span></figcaption>
-        <div class="ph-img"><img src="images/portrait.jpg" alt="Dustin Wagner" width="1200" height="1600" loading="lazy" decoding="async"></div>
+        <div class="ph-img"><img src="images/portrait.jpg" srcset="images/480/portrait.jpg 480w, images/portrait.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Dustin Wagner" width="1200" height="1600" loading="lazy" decoding="async"></div>
       </figure>
       <figure class="af af-award">
-        <div class="ph-img"><img src="images/commencement-program-cover.jpg" alt="Vista del Lago High School Class of 2026 commencement program, cover photograph by Dustin Wagner" width="900" height="1600" loading="lazy" decoding="async"></div>
+        <div class="ph-img"><img src="images/commencement-program-cover.jpg" srcset="images/480/commencement-program-cover.jpg 480w, images/commencement-program-cover.jpg 900w" sizes="(max-width:600px) 100vw, (max-width:1150px) 50vw, 34vw" alt="Vista del Lago High School Class of 2026 commencement program, cover photograph by Dustin Wagner" width="900" height="1600" loading="lazy" decoding="async"></div>
         <figcaption class="rebate"><span class="fr">2026</span><span class="rl-title">PROGRAM COVER<span class="cap-extra"> · VISTA DEL LAGO</span></span><span class="perf" aria-hidden="true"></span></figcaption>
       </figure>
     </div>
@@ -694,8 +731,8 @@ footer{border-top:1px solid var(--rule)}
       <div class="contact-note">
         <p class="award-label">INQUIRIES</p>
         <ul class="contact-lines">
-          <li><span class="cl-label">EMAIL</span><span class="cl-val">dustinwagner30@icloud.com</span></li>
-          <li><span class="cl-label">PHONE</span><span class="cl-val">(916) 597-5512</span></li>
+          <li><span class="cl-label">EMAIL</span><a class="cl-val" href="mailto:dustinwagner30@icloud.com">dustinwagner30@icloud.com</a></li>
+          <li><span class="cl-label">PHONE</span><a class="cl-val" href="tel:+19165975512">(916) 597-5512</a></li>
         </ul>
       </div>
     </div>
@@ -704,6 +741,8 @@ footer{border-top:1px solid var(--rule)}
 
 <footer>
   <div class="foot-inner">
+    <a class="foot-name" href="#top">Dustin Wagner</a>
+    <span>FOLSOM, CALIFORNIA</span>
     <span class="copy">© 2026 DUSTIN WAGNER · ALL FRAMES ORIGINAL WORK</span>
   </div>
 </footer>
@@ -711,11 +750,11 @@ footer{border-top:1px solid var(--rule)}
 <button class="totop" id="totop" aria-label="Back to top">TOP ↑</button>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <button class="lb-close" id="lbClose" aria-label="Close">ESC / CLOSE</button>
-  <button class="lb-prev" id="lbPrev" aria-label="Previous">←</button>
-  <img id="lbImg" src="" alt="">
-  <div class="lb-cap"><span class="fr" id="lbFr"></span><span id="lbTitle"></span></div>
-  <button class="lb-next" id="lbNext" aria-label="Next">→</button>
+  <button class="lb-close" id="lbClose" aria-label="Close">CLOSE &times;</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">&larr;</button>
+  <div class="lb-stage"><img id="lbImg" alt=""></div>
+  <div class="lb-cap" aria-live="polite"><span class="lb-title" id="lbTitle"></span><span class="fr" id="lbFr"></span><span id="lbSeries"></span></div>
+  <button class="lb-next" id="lbNext" aria-label="Next">&rarr;</button>
 </div>
 
 <script>
@@ -739,7 +778,9 @@ footer{border-top:1px solid var(--rule)}
     for(j=n;j>0;j=i){
       i=prev[j]; var sum=0; for(var m=i;m<j;m++) sum+=a[m];
       var rh=(C-gap*(j-i-1))/sum;
-      for(m=i;m<j;m++){ var w=Math.floor(a[m]*rh*100)/100; f[m].style.flex=(m===j-1?'1 1 ':'0 0 ')+w+'px'; }
+      for(m=i;m<j;m++){ var w=Math.floor(a[m]*rh*100)/100; f[m].style.flex=(m===j-1?'1 1 ':'0 0 ')+w+'px';
+        if(!f[m].classList.contains('in')) f[m].style.transitionDelay=((m-i)*90)+'ms';
+        var im=f[m].querySelector('img'); if(im) im.sizes=Math.ceil(w)+'px'; }
     }
   }
   var gals=[].slice.call(document.querySelectorAll('.jg'));
@@ -747,6 +788,12 @@ footer{border-top:1px solid var(--rule)}
   layoutAll();
   if('ResizeObserver' in window){ var ro=new ResizeObserver(function(){ requestAnimationFrame(layoutAll); }); gals.forEach(function(g){ro.observe(g)}); }
   else addEventListener('resize',layoutAll);
+
+  // fade each image in once it has loaded
+  document.querySelectorAll('.ph-img img').forEach(function(im){
+    function ok(){ im.classList.add('ld'); }
+    if(im.complete&&im.naturalWidth) ok(); else { im.addEventListener('load',ok); im.addEventListener('error',ok); }
+  });
 
   // progress bar
   var prog=document.getElementById('progress');
@@ -759,7 +806,7 @@ footer{border-top:1px solid var(--rule)}
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   },{rootMargin:'0px 0px -8% 0px',threshold:.06});
-  document.querySelectorAll('.ph,.af,.ch-head,.statement>*').forEach(function(el){ io.observe(el); });
+  document.querySelectorAll('.ph,.af,.ch-head,.statement>*,.kit-fig').forEach(function(el){ io.observe(el); });
 
   // back to top
   var tt=document.getElementById('totop');
@@ -780,34 +827,62 @@ footer{border-top:1px solid var(--rule)}
   // lightbox
   var figs=[].slice.call(document.querySelectorAll('.ph'));
   var lb=document.getElementById('lb'), img=document.getElementById('lbImg'),
-      ttl=document.getElementById('lbTitle'), fr=document.getElementById('lbFr'), idx=-1;
+      ttl=document.getElementById('lbTitle'), fr=document.getElementById('lbFr'),
+      ser=document.getElementById('lbSeries'), idx=-1, tk=0, opener=null;
+  function src(i){ return 'images/'+figs[(i+figs.length)%figs.length].dataset.slug+'.jpg'; }
   function show(i){
     idx=(i+figs.length)%figs.length;
-    var f=figs[idx];
-    img.src='images/'+f.dataset.slug+'.jpg';
-    img.alt=f.dataset.title;
-    ttl.textContent=f.dataset.title.toUpperCase();
+    var f=figs[idx], s=src(idx), t=++tk, pre=new Image();
+    var ch=f.closest('.chapter'), st=ch&&ch.querySelector('.ch-title');
+    ttl.textContent=f.dataset.title;
     fr.textContent='FR '+f.dataset.fr+' / '+figs.length;
-    lb.classList.add('open');
-    document.body.style.overflow='hidden';
-    [idx+1,idx-1].forEach(function(j){ var n=figs[(j+figs.length)%figs.length]; (new Image()).src='images/'+n.dataset.slug+'.jpg'; });
+    ser.textContent=st?st.textContent.toUpperCase():'';
+    img.classList.add('sw');
+    pre.onload=pre.onerror=function(){
+      if(t!==tk) return;
+      img.src=s; img.alt=f.dataset.title;
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ img.classList.remove('sw'); }); });
+    };
+    pre.src=s;
+    if(!lb.classList.contains('open')){
+      opener=document.activeElement;
+      lb.classList.add('open'); document.body.style.overflow='hidden';
+      document.getElementById('lbClose').focus({preventScroll:true});
+    }
+    (new Image()).src=src(idx+1); (new Image()).src=src(idx-1);
   }
-  function hide(){ lb.classList.remove('open'); document.body.style.overflow=''; idx=-1; }
+  function hide(){
+    lb.classList.remove('open'); document.body.style.overflow=''; tk++; idx=-1;
+    if(opener&&opener.focus) opener.focus({preventScroll:true});
+  }
   figs.forEach(function(f,i){
     f.setAttribute('tabindex','0'); f.setAttribute('role','button');
+    f.setAttribute('aria-label','View '+f.dataset.title);
     f.addEventListener('click',function(){show(i)});
     f.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();show(i);} });
   });
   document.getElementById('lbClose').addEventListener('click',hide);
   document.getElementById('lbPrev').addEventListener('click',function(){show(idx-1)});
   document.getElementById('lbNext').addEventListener('click',function(){show(idx+1)});
-  lb.addEventListener('click',function(e){ if(e.target===lb) hide(); });
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('lb-stage')) hide(); });
   addEventListener('keydown',function(e){
     if(!lb.classList.contains('open'))return;
     if(e.key==='Escape')hide();
-    if(e.key==='ArrowLeft')show(idx-1);
-    if(e.key==='ArrowRight')show(idx+1);
+    else if(e.key==='ArrowLeft')show(idx-1);
+    else if(e.key==='ArrowRight')show(idx+1);
+    else if(e.key==='Tab'){ // keep focus inside the viewer
+      var b=[].slice.call(lb.querySelectorAll('button')), k=b.indexOf(document.activeElement);
+      e.preventDefault(); b[(k+(e.shiftKey?-1:1)+b.length)%b.length].focus();
+    }
   });
+  var tx=null, ty=null;
+  lb.addEventListener('touchstart',function(e){ tx=e.touches[0].clientX; ty=e.touches[0].clientY; },{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(tx===null) return;
+    var dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty; tx=null;
+    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.4) show(idx+(dx<0?1:-1));
+    else if(dy>90&&Math.abs(dy)>Math.abs(dx)*1.4) hide();
+  },{passive:true});
 })();
 </script>
 </body>
