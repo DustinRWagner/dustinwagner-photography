@@ -1,12 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Dustin Wagner">
-  <style>
-    .tile { fill: #0F3D3E; }
-    .mark { fill: none; stroke: #FFFFFF; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
-    @media (prefers-color-scheme: dark) {
-      .tile { fill: #2A7F78; }
-    }
-  </style>
-  <rect class="tile" x="0" y="0" width="64" height="64" rx="13"/>
-  <path class="mark" d="M8 47 L8 17 L14 17 A9.5 15 0 0 1 14 47 Z"/>
-  <path class="mark" d="M35.5 17 L40.6 47 L45.75 32 L50.9 47 L56 17"/>
+  <defs>
+    <radialGradient id="mist" cx="50%" cy="46%" r="62%">
+      <stop offset="0" stop-color="#2a2218"/>
+      <stop offset=".55" stop-color="#15120e"/>
+      <stop offset="1" stop-color="#0d0c0a"/>
+    </radialGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6ecd6"/>
+      <stop offset="1" stop-color="#d9b36f"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.6" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#mist)"/>
+  <path d="M7.68 43.11V42.53H16.96Q18.49 42.53 19.79 41.78Q21.09 41.04 22.14 39.76Q23.19 38.49 23.99 36.87Q24.78 35.24 25.32 33.48Q25.85 31.71 26.13 29.99Q26.41 28.26 26.41 26.77Q26.41 25.74 26.2 24.74Q25.99 23.74 25.49 22.94Q24.99 22.13 24.14 21.65Q23.28 21.17 21.98 21.17H12.49V20.59H22.25Q24.69 20.59 26.62 21.47Q28.55 22.34 29.67 24.09Q30.79 25.84 30.79 28.43Q30.79 31.4 29.76 34.05Q28.73 36.7 26.89 38.74Q25.05 40.78 22.61 41.95Q20.16 43.11 17.32 43.11ZM10.37 43.11 15.49 20.59H19.44L14.32 43.11ZM39.38 43.41 36.95 20.59H40.91L42.76 38.43L53.18 20.59H53.84L40.52 43.41ZM30.34 43.41 27.89 20.59H32.14L33.97 38.43L38.84 30.05H39.49L31.74 43.41ZM25.31 21.17V20.59H49.17V21.17ZM40.31 30.59 46.15 20.59H46.8L40.97 30.59ZM50.52 21.17V20.59H56.32V21.17Z" fill="#c99a4b" opacity=".55" filter="url(#glow)"/>
+  <path d="M7.68 43.11V42.53H16.96Q18.49 42.53 19.79 41.78Q21.09 41.04 22.14 39.76Q23.19 38.49 23.99 36.87Q24.78 35.24 25.32 33.48Q25.85 31.71 26.13 29.99Q26.41 28.26 26.41 26.77Q26.41 25.74 26.2 24.74Q25.99 23.74 25.49 22.94Q24.99 22.13 24.14 21.65Q23.28 21.17 21.98 21.17H12.49V20.59H22.25Q24.69 20.59 26.62 21.47Q28.55 22.34 29.67 24.09Q30.79 25.84 30.79 28.43Q30.79 31.4 29.76 34.05Q28.73 36.7 26.89 38.74Q25.05 40.78 22.61 41.95Q20.16 43.11 17.32 43.11ZM10.37 43.11 15.49 20.59H19.44L14.32 43.11ZM39.38 43.41 36.95 20.59H40.91L42.76 38.43L53.18 20.59H53.84L40.52 43.41ZM30.34 43.41 27.89 20.59H32.14L33.97 38.43L38.84 30.05H39.49L31.74 43.41ZM25.31 21.17V20.59H49.17V21.17ZM40.31 30.59 46.15 20.59H46.8L40.97 30.59ZM50.52 21.17V20.59H56.32V21.17Z" fill="url(#ink)"/>
 </svg>
